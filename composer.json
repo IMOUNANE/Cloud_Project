@@ -1,0 +1,11 @@
+{
+    "name": "gravity/cloud_project",
+    "description": "students project",
+    "authors": [
+        {
+            "name": "gravity-zero",
+            "email": "gravity.neo@gmail.com"
+        }
+    ],
+    "require": {}
+}
