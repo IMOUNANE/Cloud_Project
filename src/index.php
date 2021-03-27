@@ -3,7 +3,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use CloudProject\Controllers\DotEnv;
 
-(new DotEnv(__DIR__ . '/.env'))->load();
+(new DotEnv('../.env'))->load();
 
 echo getenv('APP_ENV');
 // dev
