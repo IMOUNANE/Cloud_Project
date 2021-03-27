@@ -58,6 +58,7 @@ Thumbs.db
 # Custom #
 ######################
 *.sass-cache*
+/vendor/
 .cache/*
 _site
 /.idea
