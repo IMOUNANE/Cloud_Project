@@ -9,3 +9,6 @@ echo getenv('APP_ENV');
 // dev
 echo getenv('DATABASE_DNS');
 // mysql:host=localhost;dbname=test;
+
+$Environment = getenv('APP_ENV');
+
