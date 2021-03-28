@@ -7,7 +7,9 @@
             "email": "gravity.neo@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "slim/slim": "3"
+    },
     "autoload": {
         "psr-4": {
             "CloudProject\\": "src"
