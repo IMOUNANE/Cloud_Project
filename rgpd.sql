@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 28 mars 2021 à 14:05
+-- Généré le : Dim 28 mars 2021 à 16:04
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 8.0.3
 
@@ -40,6 +40,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `login`, `password`, `entreprise`, `ip_adress`, `email`, `creation_date`, `is_active`, `is_client`) VALUES
+(1, 'gravity', '123456789', 'toto', NULL, 'gravity@yopmail.com', '2021-03-28', 1, 0);
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -57,7 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
