@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 28 mars 2021 à 16:04
+-- Généré le : Dim 28 mars 2021 à 17:45
 -- Version du serveur :  8.0.23-0ubuntu0.20.04.1
 -- Version de PHP : 8.0.3
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `rgpd`
 --
+CREATE DATABASE IF NOT EXISTS `rgpd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `rgpd`;
 
 -- --------------------------------------------------------
 
