@@ -1,18 +1,19 @@
 {
-    "name": "gravity/cloud_project",
-    "description": "students project",
-    "authors": [
-        {
-            "name": "gravity-zero",
-            "email": "gravity.neo@gmail.com"
-        }
-    ],
-    "require": {
-        "slim/slim": "3"
-    },
-    "autoload": {
-        "psr-4": {
-            "CloudProject\\": "src"
-        }
+  "name": "gravity/cloud_project",
+  "description": "students project",
+  "authors": [
+    {
+      "name": "gravity-zero",
+      "email": "gravity.neo@gmail.com"
     }
+  ],
+  "require": {
+    "slim/slim": "3"
+  },
+  "autoload": {
+    "psr-4": {
+      "CloudProject\\": "src",
+      "public\\": "public"
+    }
+  }
 }

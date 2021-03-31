@@ -2,13 +2,17 @@
 namespace CloudProject\Controllers;
 
 class Auth{
-
-  public function __construct()
-  {
-      
+  public $repo;
+  public function __construct($repo){
+      $this->repo = $repo;
   }
 
-
+  public function setLogin($datas){
+    //filter_input($_POST
+    $req = $this->repo->prepare('SELECT * FROM users');
+    $req->execute();
+    $posts = $req->fetchAll();
+  }
 }
 
 
