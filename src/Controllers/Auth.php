@@ -9,9 +9,7 @@ class Auth{
 
   public function setLogin($datas){
     //filter_input($_POST
-    $req = $this->repo->prepare('SELECT * FROM users');
-    $req->execute();
-    $posts = $req->fetchAll();
+    $req = $this->repo->check_auth($datas);
   }
 }
 

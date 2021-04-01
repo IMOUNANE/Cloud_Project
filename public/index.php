@@ -7,5 +7,5 @@ require_once '../vendor/autoload.php';
 use CloudProject\Router;
 
 $router = new Router();
-var_dump($router);
+//var_dump($router);
 $router->getRoute();
