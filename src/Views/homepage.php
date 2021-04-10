@@ -1,9 +1,6 @@
-<?php 
- 
-?>
 
 
-<div id="app">
+
   <div id="main-header">
   
   </div>
@@ -15,5 +12,5 @@
   <div id="footer-content">
 
   </div>
-</div>
+<script>APPEL FICHIER JS</script>
   
