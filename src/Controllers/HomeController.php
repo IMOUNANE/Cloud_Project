@@ -4,11 +4,13 @@ namespace CloudProject\Controllers;
 
 class HomeController
 {
-    public function __construct(){
-
-    }
+    
     public function home() {
-        require_once "..\src\Views\homepage.php"; 
+        require_once 'Views/homepage.php';
+    }
+
+    public function backOffice() {
+        require_once 'Views/backoffice.php';
     }
 
 }
