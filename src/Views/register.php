@@ -1,19 +1,17 @@
-<form  method="POST">
+<h1>Inscription</h1>
+
+<form method="POST" action="?url=subscribe">
     <p>
-        <label for="login">Login</label>
-        <input name="login"type="text"required/>
+        <label for="mail">login/e-mail</label>
+        <input name="mail" type="text" required/>
     </p>
     <p>
         <label for="password">Password</label>
-        <input name="password" type="password"required/>
+        <input name="password" type="password" required/>
     </p>
     <p>
-        <label for="mail">Mail</label>
-        <input name="password" type="mail"required/>
-    </p>
-    <p>
-        <label for="company">Company</label>
-        <input name="texte" type="company" required/>
+        <label for="company_name">Company</label>
+        <input name="company_name" type="texte" required/>
     </p>
     <button type="submit">Connexion</button>
 </form>

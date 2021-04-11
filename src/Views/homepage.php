@@ -2,7 +2,9 @@
 
 
   <div id="main-header">
-  
+  <a href="index.php?url=register">Inscription</a>
+  <a href="index.php?url=login">login</a>
+  <a href="index.php?url=logout">Déconnexion</a>
   </div>
   <h1>Homepage</h1>
   
@@ -12,5 +14,5 @@
   <div id="footer-content">
 
   </div>
-<script>APPEL FICHIER JS</script>
+<script>//APPEL FICHIER JS</script>
   

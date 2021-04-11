@@ -31,11 +31,10 @@ USE `rgpd`;
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `login` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `entreprise` varchar(255) DEFAULT NULL COMMENT 'Nom entreprise',
-  `ip_adress` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `email` varchar(255) NOT NULL,
+  `entreprise` varchar(255) DEFAULT NULL COMMENT 'Nom entreprise',
+  `ip_adress` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
   `creation_date` date NOT NULL,
   `is_active` tinyint(1) NOT NULL COMMENT 'Compte utilisateur actif (bool)',
   `is_client` tinyint(1) NOT NULL COMMENT 'Compte utilisateur ayant payé'
@@ -45,8 +44,8 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `password`, `entreprise`, `ip_adress`, `email`, `creation_date`, `is_active`, `is_client`) VALUES
-(1, 'gravity', '123456789', 'toto', NULL, 'gravity@yopmail.com', '2021-03-28', 1, 0);
+INSERT INTO `users` (`id`, `password`,`email`, `entreprise`, `ip_adress`, `creation_date`, `is_active`, `is_client`) VALUES
+(1, '123456789', 'gravity@yopmail.com', 'toto', NULL, '2021-03-28', 1, 0);
 
 --
 -- Index pour les tables déchargées
