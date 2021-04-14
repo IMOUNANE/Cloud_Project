@@ -26,7 +26,15 @@ use CloudProject\Models\{Auth_repo,Database};
 	}
 	elseif($url == "login")
 	{
-		$AuthController->setLogin($_POST);
+		$AuthController->getLogin();
+	}
+	elseif($url == "checkadmin")
+	{
+		$AuthController->setbackOffice($_POST);
+	}
+	elseif($url == "logout")
+	{
+		$AuthController->getLogout();
 	}
 	elseif($url == "register")
 	{
@@ -36,11 +44,7 @@ use CloudProject\Models\{Auth_repo,Database};
 	{
 		$AuthController->setRegister($_POST);
 	}
-	elseif($url == "backoffice")
-	{
-		$HomeController->backOffice($_POST);
-	}
-
+	
 
 
 

@@ -7,17 +7,23 @@ class Auth{
       $this->repo = $repo;
   }
 
-  public function setLogin($datas){
+  public function getLogin(){
       require_once "Views/Login.php";
-      $req = $this->repo->check_auth($datas);
-      
   }
+  public function getLogout(){
+	session_unset();
 
+    header('Location:?url=index');
+  }
   public function getRegister(){
       require_once "Views/register.php";
   }
+  public function getBackoffice(){
+	require_once "Views/backoffice.php";
+  }
 
-    public function setRegister($datas){
+
+	public function setRegister($datas){
 		$is_already_registered = $this->repo->isAlreadyUser();
 
 			if(!array_key_exists($datas['mail'], $is_already_registered) && filter_var($datas['mail'], FILTER_VALIDATE_EMAIL) && strlen($datas['password']) > 3 && $datas['company_name']){
@@ -46,6 +52,40 @@ class Auth{
 				}
 			}
 	}
+	public function setBackOffice($inputs) {
+
+        if(isset($inputs["login"]) && isset($inputs["password"])){
+
+            $inputs["login"]=htmlspecialchars(trim($inputs['login']));
+        	$inputs["password"]=htmlspecialchars(trim($inputs['password']));
+
+			$datas=$this->repo->check_auth($inputs["login"]);
+           
+            if(isset($datas)){
+               
+               $data=$datas[0];
+                if($inputs["login"]===$data["email"] && password_verify($inputs["password"], $data["password"]) && (bool)$data["is_active"]==1){
+
+					$_SESSION["id"] = $data["id"]; 
+					if($_SESSION["id"]){
+						$this->getBackoffice();
+					}
+                }else{
+                    //echo "<script>alert('Mot de passe incorect veuillez réessayer')</script>";
+                    //header("refresh:0;?url=login");
+                    echo "erreur";
+                }
+            }else{
+                echo "<script>alert('Veuillez vous Inscrire')</script>";
+                header("location: ?url=register");
+            }
+            
+           
+        }
+       
+        
+        
+    }
   
 }
 

@@ -1,4 +1,4 @@
-<form action ="?url=backoffice" method="POST">
+<form action ="?url=checkadmin" method="POST">
     <p>
         <label for="">Login</label>
         <input name="login"type="text"/>

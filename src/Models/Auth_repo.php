@@ -12,14 +12,9 @@ class Auth_repo{
     
             $req="SELECT id,email,password,is_active FROM users WHERE email =:email";
             $stmt = $this->db->connection->prepare($req);
-            
-            $stmt->execute([
-                "email" => $email
-            ]);
-         
-
+            $stmt->execute(array("email" =>$email));
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            var_dump($result);
+            
             return $result;
     }
 
