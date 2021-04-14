@@ -8,8 +8,19 @@ class Auth_repo{
             $this->db=$db;
     }
 
-    public function check_auth(array $datas) {
-      //ismael login + logout
+    public function check_auth($email) {
+    
+            $req="SELECT id,email,password,is_active FROM users WHERE email =:email";
+            $stmt = $this->db->connection->prepare($req);
+            
+            $stmt->execute([
+                "email" => $email
+            ]);
+         
+
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            var_dump($result);
+            return $result;
     }
 
     public function isAlreadyUser(){

@@ -12,7 +12,7 @@ use CloudProject\Models\{Auth_repo,Database};
     $AuthModel = new Auth_repo($db);
     //Controller
     $AuthController = new Auth($AuthModel);
-    $HomeController = new HomeController();
+    $HomeController = new HomeController($AuthModel);
     
 	$url = null;
 
@@ -38,7 +38,7 @@ use CloudProject\Models\{Auth_repo,Database};
 	}
 	elseif($url == "backoffice")
 	{
-		$HomeController->backOffice($_POST, $_GET['id']);
+		$HomeController->backOffice($_POST);
 	}
 
 

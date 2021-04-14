@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `rgpd`
 --
-CREATE DATABASE IF NOT EXISTS `rgpd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE DATABASE IF NOT EXISTS `rgpd` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `rgpd`;
 
 -- --------------------------------------------------------
@@ -34,11 +34,11 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `entreprise` varchar(255) DEFAULT NULL COMMENT 'Nom entreprise',
-  `ip_adress` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `ip_adress` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `creation_date` date NOT NULL,
   `is_active` tinyint(1) NOT NULL COMMENT 'Compte utilisateur actif (bool)',
   `is_client` tinyint(1) NOT NULL COMMENT 'Compte utilisateur ayant payé'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `users`
