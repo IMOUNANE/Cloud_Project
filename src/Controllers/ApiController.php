@@ -22,8 +22,7 @@ class ApiController{
           if($ip_adress && filter_var($ip_adress, FILTER_VALIDATE_IP)){ //Control we have ip_adress & is valid ip_adress
             $existing_ip = $this->control_ip($client_id, $ip_adress);
             if($existing_ip){ // On vérifie que l'adresse ip est connu pour le client
-              $choices = array();
-              $choices[] = $this->getChoices($client_id, $ip_adress); // On stocke les choix visiteurs pour l'adresse ip du site client
+              $choices = $this->getChoices($client_id, $ip_adress); // On stocke les choix visiteurs pour l'adresse ip du site client
               if(is_array($choices) && !empty($choices) && $choices){
                 return json_encode($choices); // On retourne ces choix utilisateurs (liste des choix à définir)
               }
