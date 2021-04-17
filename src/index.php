@@ -2,17 +2,20 @@
 
 require_once '../vendor/autoload.php';
 
-use CloudProject\Controllers\{DotEnv,Auth,HomeController};
-use CloudProject\Models\{Auth_repo,Database};
+use CloudProject\Controllers\{DotEnv,Auth,HomeController, ApiController};
+use CloudProject\Models\{Auth_repo,Database, Api_repo};
 
     (new DotEnv('../.env'))->load();
 
     //DB
     $db = new Database(getenv('DATABASE_DNS'), getenv('DATABASE_USER'), getenv('DATABASE_PASSWORD'));
     $AuthModel = new Auth_repo($db);
+		$ApiModel = new Api_repo($db);
     //Controller
     $AuthController = new Auth($AuthModel);
     $HomeController = new HomeController($AuthModel);
+
+		$ApiController = new ApiController($ApiModel);
     
 	$url = null;
 
@@ -43,6 +46,9 @@ use CloudProject\Models\{Auth_repo,Database};
 	elseif($url == "subscribe")
 	{
 		$AuthController->setRegister($_POST);
+	}elseif($url == "apiV1")
+	{
+		$ApiController->serve_api($_GET, $_POST);
 	}
 	
 
