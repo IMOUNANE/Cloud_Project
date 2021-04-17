@@ -46,9 +46,13 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	elseif($url == "subscribe")
 	{
 		$AuthController->setRegister($_POST);
-	}elseif($url == "apiV1")
+	}
+	elseif($url = str_starts_with($url, "apiV1/"))
 	{
 		$ApiController->serve_api($_GET, $_POST);
+	}
+	else{
+		echo "404";
 	}
 	
 

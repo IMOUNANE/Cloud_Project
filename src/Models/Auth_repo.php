@@ -4,16 +4,15 @@ namespace CloudProject\Models;
 
 class Auth_repo{
     private $db;
+    
     public function __construct($db){
-            $this->db=$db;
+        $this->db=$db;
     }
 
     public function check_auth($email) {
-    
-            $req="SELECT id,email,password,is_active FROM users WHERE email =:email";
-            $stmt = $this->db->connection->prepare($req);
-            $stmt->execute(array("email" =>$email));
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = $this->db->connection->prepare("SELECT id,email,password,is_active FROM users WHERE email =:email");
+        $stmt->execute(array("email" =>$email));
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
             return $result;
     }
