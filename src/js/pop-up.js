@@ -1,8 +1,9 @@
 function get_infos(){
-  console.log("toto");
-  fetch('?url=apiV1/apikey=toto/ip_adress=172.195.25.12')
+  
+  fetch('http://localhost/cloud_project/src/?url=apiV1/apikey=toto/ip_adress=172.195.25.12')
     .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if(data.unknown){
           create_script(data.unknown);
         }else{
@@ -23,6 +24,7 @@ function get_infos(){
       });
 }
 
+get_infos();
 
 function set_choices_false(){
   all_inputs = document.querySelectorAll("input").value = "false";
@@ -48,4 +50,5 @@ function create_script(ip_adress){
 
 function get_form(ip_adress){
   //créer le formulaire (modèle : views/pop-up.php) dans une balise alerte
+  console.log("form")
 }

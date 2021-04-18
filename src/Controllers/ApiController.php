@@ -24,23 +24,23 @@ class ApiController{
             if($existing_ip){ // On vérifie que l'adresse ip est connu pour le client
               $choices = $this->getChoices($client_id, $ip_adress); // On stocke les choix visiteurs pour l'adresse ip du site client
               if(is_array($choices) && !empty($choices) && $choices){
-                return json_encode($choices); // On retourne ces choix utilisateurs (liste des choix à définir)
+                echo json_encode($choices); // On retourne ces choix utilisateurs (liste des choix à définir)
               }
             }else{
               $unknown = ["unknown" => $ip_adress];
-              return json_encode($unknown); //Le client n'est pas connu on active la pop-up pour récolter les choix utilisateurs.
+              echo json_encode($unknown); //Le client n'est pas connu on active la pop-up pour récolter les choix utilisateurs.
             }
           }else{
             $error = ["error" => "Missing ip_adress"];
-            return json_encode($error);
+            echo json_encode($error);
           }
       }else{
         $error = ["error" => "Invalid API_Key ?!"];
-        return json_encode($error);
+        echo json_encode($error);
       }
     }else{
       $error = ["error" => "Forget API_Key ?!"];
-      return json_encode($error);
+      echo json_encode($error);
     }
   }
 
