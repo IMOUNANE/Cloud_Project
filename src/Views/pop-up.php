@@ -13,4 +13,5 @@
   <button type="button" onclick="set_choices()">Enregistrer</button>
 </form>
 
-<script type="text/javascript" src="js/pop-up.js"></script>
+<script type="text/javascript" src="http://localhost:80/cloud_project/src/js/pop-up.js"></script>
+

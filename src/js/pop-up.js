@@ -1,29 +1,35 @@
 function get_infos(){
-  fetch('?url=apiV1/apikey=fsd6f54sf/ip_adress=172.195.25.12', {
-    method: 'POST',
+  
+  fetch('?url=apiV1/apikey=toto/ip_adress=172.195.25.12', {
+    method: 'GET',
     body: JSON.stringify(ip_adress)
   }).then(function(response) {
     return response.json();
   }).then(function(data) {
-    console.log(data);
     if(data.unknown){
-      set_infos(); 
+      set_infos(data.unknown);
     }else{
-      if(data.user_choice_1){
+      if(parseInt(data.user_choice_1, 10) === 1){ //On converti la string en nombre en base 10
         //script client à charger (exemple googleAds)
       }
-      if(data.user_choice_2){
+      if(parseInt(data.user_choice_2, 10) === 1){
         //script client à charger (exemple googleAnalytics)
       }
-      if(data.user_choice_3){
+      if(parseInt(data.user_choice_3, 10) === 1){
         //script client à charger
       }
-      if(data.user_choice_4){
+      if(parseInt(data.user_choice_4, 10) === 1){
         //script client à charger
       }
+      //Pas besoin de else, si la réponse est false (0) on ne charge pas les scripts clients
     }
   })
 }
+
+
+
+json = {script: '<script>alert</script>'}
+
 
 function set_choices_false(){
   all_inputs = document.querySelectorAll("input").value = "false";
@@ -42,7 +48,7 @@ function set_choices(){
   });
 }
 
-function set_infos(){
+function set_infos(ip_adress){
   alert('On affiche le formulaire');
   //Et on traite l'information
 }
