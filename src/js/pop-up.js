@@ -5,19 +5,23 @@ function get_infos(){
       .then((data) => {
         console.log(data);
         if(data.unknown){
-          create_script(data.unknown);
+          get_form(data.unknown);
+        }else if(data.erreur){
+          console.log(data.erreur);
         }else{
-          if(parseInt(data.user_choice_1, 10) === 1){ //On converti la string en nombre en base 10
-            //script client à charger (exemple googleAds)
+          choices = data.choices;
+          console.log(choices);
+          if(parseInt(choices.user_choice_1, 10) === 1){ //On converti la string en nombre en base 10
+            console.log("Ok pour googleAds");//script client à charger (exemple googleAds)
           }
-          if(parseInt(data.user_choice_2, 10) === 1){
-            //script client à charger (exemple googleAnalytics)
+          if(parseInt(choices.user_choice_2, 10) === 1){
+            console.log("Ok pour googleAnalytics");//script client à charger (exemple googleAnalytics)
           }
-          if(parseInt(data.user_choice_3, 10) === 1){
-            //script client à charger
+          if(parseInt(choices.user_choice_3, 10) === 1){
+            console.log("Ok pour autres");//script client à charger
           }
-          if(parseInt(data.user_choice_4, 10) === 1){
-            //script client à charger
+          if(parseInt(choices.user_choice_4, 10) === 1){
+            console.log("Ok pour autres+1");//script client à charger
           }
           //Pas besoin de else, si la réponse est false (0) on ne charge pas les scripts clients
         }
@@ -43,12 +47,9 @@ function set_choices(){
   });
 }
 
-function create_script(ip_adress){
-  //insérer balise script dans le body 
-  get_form(ip_adress);
-}
 
 function get_form(ip_adress){
   //créer le formulaire (modèle : views/pop-up.php) dans une balise alerte
-  console.log("form")
+  var windowObjectReference = window.open("http://localhost/cloud_project/src/?url=apiV1/get_form");
+
 }
