@@ -1,11 +1,18 @@
-function get_infos(){
+function get_ip(){
+
+
+  get_infos(ip_adress=null)
+}
+
+
+function get_infos(ip_adress){
   
-  fetch('http://localhost/cloud_project/src/?url=apiV1/apikey=toto/ip_adress=172.195.25.12')
+  fetch('http://localhost/cloud_project/src/?url=apiV1/apikey=toto/ip_adress=172.195.25.11')
     .then((response) => response.json())
       .then((data) => {
         console.log(data);
         if(data.unknown){
-          get_form(data.unknown);
+          create_button(data)
         }else if(data.erreur){
           console.log(data.erreur);
         }else{
@@ -28,28 +35,47 @@ function get_infos(){
       });
 }
 
-get_infos();
+get_ip();
+
 
 function set_choices_false(){
   all_inputs = document.querySelectorAll("input").value = "false";
+  
+    send_ajax(data);
   //ajax send
   //Rappel de la fonction get_infos() au moment de la réponse de l'ajax
 }
 
+
+
 function set_choices(){
   inputs = document.querySelectorAll("input").value
-
   inputs.forEach(value => {
     console.log(value);
+    
     //Récupérer choix utilisateurs ?
     //ajax send
     //Rappel de la fonction get_infos() au moment de la réponse de l'ajax
   });
+  
 }
 
 
-function get_form(ip_adress){
-  //créer le formulaire (modèle : views/pop-up.php) dans une balise alerte
-  var windowObjectReference = window.open("http://localhost/cloud_project/src/?url=apiV1/get_form");
 
+function get_form(datas){
+ 
+  var strWindowFeatures = "width=500,height=600,directories=no, menubar=no,location=no, status=no, resizable=yes,scrollbars=yes";
+    console.log("toto");
+    popup = window.open("http://localhost/cloud_project/src/?url=apiV1/get_form/"+"id="+datas.client_id+"/ip_adress="+datas.unknown, "_blank", strWindowFeatures);
+    popup.close();
+      
+}
+
+function create_button(datas){
+  var button = document.createElement('button');
+  button.setAttribute("type", "button");
+  button.onclick = get_form(datas);
+  document.body.append(button);
+  button.click();
+  button.remove();
 }

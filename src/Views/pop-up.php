@@ -8,10 +8,10 @@
   <input type="radio" name="user_choice_3" value="1">
   <label for="user_choice_4">Choix 4 [TITRE A DEFINIR]</label>
   <input type="radio" name="user_choice_4" value="1">
-  <input type="hidden" name="ip_adress" value=ip_adresse>
 
   <button type="button" onclick="set_choices_false()">Tout refuser</button>
   <button type="button" onclick="set_choices()">Enregistrer</button>
 </form>
 
-<script type="text/javascript" src="http://localhost:80/cloud_project/src/js/pop-up.js"></script>
+<script type="text/javascript" src="http://localhost:80/cloud_project/src/js/traitement.js"></script>
+

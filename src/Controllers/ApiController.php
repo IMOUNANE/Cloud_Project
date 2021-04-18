@@ -7,7 +7,7 @@ class ApiController{
       $this->repo = $repo;
   }
 
-  public function serve_api($get, $post){ //MODELE_API = ?url=apiV1/apikey=fsd6f54sf/ip_adress=172.195.25.12
+  public function serve_api($get){ //MODELE_API = ?url=apiV1/apikey=fsd6f54sf/ip_adress=172.195.25.12
     $url = $get['url'];
     $parts = explode('/', $url);
     $key_arr = explode('key=', $parts[1]);
@@ -68,6 +68,7 @@ class ApiController{
 
   public function serve_form(){ 
     require_once "Views/pop-up.php";
+    die();
   }
 
   public function getChoices($id, $ip){ // Return visitor choice for client site
@@ -75,8 +76,17 @@ class ApiController{
       return $choices;
   }
 
-  public function setChoices($id, $ip, $choices){ // Set visitor choices (choices is_array)
+  public function setChoices($post){ // Set visitor choices (choices is_array)
+    $payload = file_get_contents('php://input');
 
-
+    if($payload) {
+      $datas = json_decode($payload);
+      if(isset($datas)) {
+        var_dump($datas);
+      }
+    }
+    if(isset($post)){
+      var_dump($datas);
+    }
   }
 }

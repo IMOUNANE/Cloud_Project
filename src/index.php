@@ -53,11 +53,11 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 		{
 			$ApiController->serve_form();
 		}else{
-			$ApiController->serve_api($_GET, $_POST);
+			$ApiController->serve_api($_GET);
 		}
 	}
 	elseif($url == "post_ajax"){
-		//Page de traitement de la pop-up client
+		$ApiController->setChoices($_POST);//Page de traitement de la pop-up client
 	}
 	else{
 		echo "404";
