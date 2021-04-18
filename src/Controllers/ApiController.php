@@ -22,22 +22,25 @@ class ApiController{
           if($ip_adress && filter_var($ip_adress, FILTER_VALIDATE_IP)){ //Control we have ip_adress & is valid ip_adress
             $existing_ip = $this->control_ip($client_id, $ip_adress);
             if($existing_ip){ // On vérifie que l'adresse ip est connu pour le client
-              $choices = array();
-              $choices[] = $this->getChoices($client_id, $ip_adress); // On stocke les choix visiteurs pour l'adresse ip du site client
+              $choices = $this->getChoices($client_id, $ip_adress); // On stocke les choix visiteurs pour l'adresse ip du site client
               if(is_array($choices) && !empty($choices) && $choices){
                 return json_encode($choices); // On retourne ces choix utilisateurs (liste des choix à définir)
               }
             }else{
-              return false; //Le client n'est pas connu on active la pop-up pour récolter les choix utilisateurs.
+              $unknown = ["unknown" => $ip_adress];
+              return json_encode($unknown); //Le client n'est pas connu on active la pop-up pour récolter les choix utilisateurs.
             }
           }else{
-            echo "Missing ip_adress";
+            $error = ["error" => "Missing ip_adress"];
+            return json_encode($error);
           }
       }else{
-        echo "Invalid API_Key ?!";
+        $error = ["error" => "Invalid API_Key ?!"];
+        return json_encode($error);
       }
     }else{
-      echo "Forget API_Key ?!";
+      $error = ["error" => "Forget API_Key ?!"];
+      return json_encode($error);
     }
   }
 
@@ -61,7 +64,7 @@ class ApiController{
 
   public function getChoices($id, $ip){ // Return visitor choice for client site
       $choices = $this->repo->get_choices($id, $ip);
-      var_dump($choices);
+      return $choices;
   }
 
   public function setChoices($id, $ip, $choices){ // Set visitor choices (choices is_array)

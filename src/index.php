@@ -47,9 +47,12 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	{
 		$AuthController->setRegister($_POST);
 	}
-	elseif($url = str_starts_with($url, "apiV1/"))
+	elseif($url == str_starts_with($url, "apiV1/"))
 	{
 		$ApiController->serve_api($_GET, $_POST);
+	}
+	elseif($url == "post_ajax"){
+		//Page de traitement de la pop-up client
 	}
 	else{
 		echo "404";
