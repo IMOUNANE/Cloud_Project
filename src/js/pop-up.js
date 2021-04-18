@@ -4,7 +4,6 @@ function get_ip(){
   get_infos(ip_adress=null)
 }
 
-
 function get_infos(ip_adress){
   
   fetch('http://localhost/cloud_project/src/?url=apiV1/apikey=toto/ip_adress=172.195.25.11')
@@ -36,31 +35,6 @@ function get_infos(ip_adress){
 }
 
 get_ip();
-
-
-function set_choices_false(){
-  all_inputs = document.querySelectorAll("input").value = "false";
-  
-    send_ajax(data);
-  //ajax send
-  //Rappel de la fonction get_infos() au moment de la réponse de l'ajax
-}
-
-
-
-function set_choices(){
-  inputs = document.querySelectorAll("input").value
-  inputs.forEach(value => {
-    console.log(value);
-    
-    //Récupérer choix utilisateurs ?
-    //ajax send
-    //Rappel de la fonction get_infos() au moment de la réponse de l'ajax
-  });
-  
-}
-
-
 
 function get_form(datas){
  
