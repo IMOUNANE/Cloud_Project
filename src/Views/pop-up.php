@@ -15,4 +15,5 @@
 </form>
 
 
-
+<script type="text/javascript" src="http://localhost:80/cloud_project/src/js/pop-up.js"></script>
+<script>get_infos();</script>
