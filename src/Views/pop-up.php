@@ -9,6 +9,9 @@
   <label for="user_choice_4">Choix 4 [TITRE A DEFINIR]</label>
   <input type="radio" name="user_choice_4" value="1">
 
+  <input type='hidden' name='client_id' value="">
+  <input type='hidden' name='ip_adress' value="">
+
   <button type="button" onclick="set_choices_false()">Tout refuser</button>
   <button type="button" onclick="set_choices()">Enregistrer</button>
 </form>

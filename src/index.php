@@ -19,7 +19,8 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
     
 	$url = null;
 
-	if(isset($_GET["url"])){
+	if(isset($_GET["url"]))
+	{
 		$url = $_GET["url"];
 	}
 
@@ -52,14 +53,18 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 		if($url == str_starts_with($url, "apiV1/get_form"))
 		{
 			$ApiController->serve_form();
-		}else{
+		}
+		else
+		{
 			$ApiController->serve_api($_GET);
 		}
 	}
-	elseif($url == "post_ajax"){
+	elseif($url == "post_ajax")
+	{
 		$ApiController->setChoices($_POST);//Page de traitement de la pop-up client
 	}
-	else{
+	else
+	{
 		echo "404";
 	}
 	

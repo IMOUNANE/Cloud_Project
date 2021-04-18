@@ -67,7 +67,7 @@ function get_form(datas){
   var strWindowFeatures = "width=500,height=600,directories=no, menubar=no,location=no, status=no, resizable=yes,scrollbars=yes";
     console.log("toto");
     popup = window.open("http://localhost/cloud_project/src/?url=apiV1/get_form/"+"id="+datas.client_id+"/ip_adress="+datas.unknown, "_blank", strWindowFeatures);
-    popup.close();
+   // popup.close();
       
 }
 
