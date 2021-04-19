@@ -6,7 +6,7 @@ function get_ip(){
 
 function get_infos(ip_adress){
   
-  fetch('http://localhost/cloud_project/src/?url=apiV1/apikey=toto/ip_adress=172.195.25.11')
+  fetch("http://localhost/cloud_project/src/?url=apiV1/apikey=toto/ip_adress=172.195.25.11")
     .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -38,11 +38,9 @@ get_ip();
 
 function get_form(datas){
  
-  var strWindowFeatures = "width=500,height=600,directories=no, menubar=no,location=no, status=no, resizable=yes,scrollbars=yes";
-    console.log("toto");
-    popup = window.open("http://localhost/cloud_project/src/?url=apiV1/get_form/"+"id="+datas.client_id+"/ip_adress="+datas.unknown, "_blank", strWindowFeatures);
-   // popup.close();
-      
+  var strWindowFeatures = "width=500,height=600,directories=no,titlebar=no,toolbar=no,menubar=no,location=no,status=no,resizable=no,scrollbars=yes";
+  popup = window.open("http://localhost/cloud_project/src/?url=apiV1/get_form/"+"id="+datas.client_id+"/ip_adress="+datas.unknown, "_blank", strWindowFeatures);
+  
 }
 
 function create_button(datas){

@@ -31,8 +31,8 @@ class ApiController{
                 echo json_encode($data); // On retourne ces choix utilisateurs (liste des choix à définir)
               }
             }else{
-              $unknown = ["unknown" => $ip_adress];
-              echo json_encode($unknown); //Le client n'est pas connu on active la pop-up pour récolter les choix utilisateurs.
+              $infos = ["unknown" => $ip_adress, "client_id" => $client_id];
+              echo json_encode($infos); //Le client n'est pas connu on active la pop-up pour récolter les choix utilisateurs.
             }
           }else{
             $error = ["error" => "Missing ip_adress"];
@@ -68,7 +68,6 @@ class ApiController{
 
   public function serve_form(){ 
     require_once "Views/pop-up.php";
-    die();
   }
 
   public function getChoices($id, $ip){ // Return visitor choice for client site
@@ -76,17 +75,21 @@ class ApiController{
       return $choices;
   }
 
-  public function setChoices($post){ // Set visitor choices (choices is_array)
+  public function setChoices(){ // Set visitor choices
     $payload = file_get_contents('php://input');
 
     if($payload) {
-      $datas = json_decode($payload);
+      $datas = json_decode($payload, true);
       if(isset($datas)) {
-        var_dump($datas);
+        $choices = $datas['AllChoices'];
+        $infos = $datas['infos'];
+        $res = $this->repo->insert_choices($infos['client_id'], $infos['ip_adress'], $choices);
+        if($res){
+          $data = ["response" => "Enregistrement Effectué"];
+          echo json_encode($data);
+        }
       }
     }
-    if(isset($post)){
-      var_dump($datas);
-    }
+    
   }
 }

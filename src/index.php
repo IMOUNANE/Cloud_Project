@@ -61,7 +61,7 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	}
 	elseif($url == "post_ajax")
 	{
-		$ApiController->setChoices($_POST);//Page de traitement de la pop-up client
+		$ApiController->setChoices();//Page de traitement de la pop-up client
 	}
 	else
 	{
