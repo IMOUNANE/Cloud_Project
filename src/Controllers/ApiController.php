@@ -1,6 +1,8 @@
 <?php
 namespace CloudProject\Controllers;
 
+
+
 class ApiController{
   public $repo;
   public function __construct($repo){
@@ -40,9 +42,6 @@ class ApiController{
     }
   }
 
-  public function create_key(){ // Create Api_key
-    
-  }
 
   public function control_key($key){ // control api_key & return client_ID who are client & active
     $id = $this->repo->get_key($key);
@@ -67,4 +66,6 @@ class ApiController{
 
 
   }
+
+ 
 }
