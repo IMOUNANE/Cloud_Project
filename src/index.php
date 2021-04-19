@@ -14,7 +14,7 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
     $AuthController = new Auth($AuthModel);
     $HomeController = new HomeController();
 
-	$ApiController = new ApiController($ApiModel);
+		$ApiController = new ApiController($ApiModel);
     
 	$url = null;
 
@@ -50,13 +50,9 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	elseif($url = str_starts_with($url, "apiV1/"))
 	{
 		$ApiController->serve_api($_GET, $_POST);
-	}*/elseif($url == "test")
+	}*/elseif($url == "client_script")
 	{
-		$ApiController->create_key();
-	}
-	elseif($url == "generate")
-	{
-		$AuthController->generate($_GET["id"]);
+		$AuthController->generate($_POST);
 	}
 	else{
 		echo "404";

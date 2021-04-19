@@ -50,10 +50,10 @@ class Auth_repo{
      }
      public function insert_key($id_client,$key,$path,$today){
         $stmt = $this->db->connection->prepare("
-        INSERT INTO api_key (client_id, client_key,script_path,client_script_1,client_script_2,client_script_3, client_script_4,last_modification) 
-        VALUES (:client_id, :client_key,:script_path,:client_script_1,:client_script_2, :client_script_3, :client_script_4,:last_modification)
+        INSERT INTO api_key (client_id, client_key,script_path,last_modification) 
+        VALUES (:client_id, :client_key,:script_path,:last_modification)
         ");
-        echo $key;
+        
         $stmt->execute([
             "client_id"=>$id_client,
             "client_key" => $key,
@@ -69,22 +69,22 @@ class Auth_repo{
         return $result[0]["client_key"];
 
      }
-     public function update_key($id, $key,$path,$clients_script,$today){
+     public function update_key($id, $key,$path, $client_script_1, $client_script_2, $client_script_3, $client_script_4,$today){
         $stmt = $this->db->connection->prepare("UPDATE api_key SET client_key=:client_key,script_path,client_script_1,client_script_2,client_script_3,client_script_4, last_modification  WHERE client_id= :client_id");
        
         $stmt->execute([
             "client_id" =>$id,
             "client_key" =>$key,
             "script_path"=>$path,
-            "client_script_1"=>$clients_script["client_script_1"],
-            "client_script_2"=>$clients_script["client_script_2"],
-            "client_script_3"=>$clients_script["client_script_3"],
-            "client_script_4"=>$clients_script["client_script_4"],
-            "last_modification"=>$today,
+            "client_script_1"=>$client_script_1,
+            "client_script_2"=>$client_script_2,
+            "client_script_3"=>$client_script_3,
+            "client_script_4"=>$client_script_4,
+            "last_modification"=>$today
         ]);
      }
-     public function get_path($id){
-        $stmt = $this->db->connection->prepare("SELECT script_path FROM api_key WHERE client_id = :client_id");
+     public function get_paths($id){
+        $stmt = $this->db->connection->prepare("SELECT script_path, client_script_1, client_script_2, client_script_3,client_script_4 FROM api_key WHERE client_id = :client_id");
         $stmt->execute([
             "client_id" =>$id,
         ]);

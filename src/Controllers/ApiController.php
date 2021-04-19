@@ -1,8 +1,6 @@
 <?php
 namespace CloudProject\Controllers;
 
-
-
 class ApiController{
   public $repo;
   public function __construct($repo){
