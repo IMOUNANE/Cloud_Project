@@ -1,4 +1,4 @@
-<form action ="?url=checkadmin" method="POST">
+<form action ="?url=checkuser" method="POST">
     <p>
         <label for="">Login</label>
         <input name="login"type="text"/>

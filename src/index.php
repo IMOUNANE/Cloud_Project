@@ -1,5 +1,4 @@
 <?php
-
 require_once '../vendor/autoload.php';
 
 use CloudProject\Controllers\{DotEnv,Auth,HomeController, ApiController};
@@ -13,7 +12,7 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 		$ApiModel = new Api_repo($db);
     //Controller
     $AuthController = new Auth($AuthModel);
-    $HomeController = new HomeController($AuthModel);
+    $HomeController = new HomeController();
 
 		$ApiController = new ApiController($ApiModel);
     
@@ -32,13 +31,13 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	{
 		$AuthController->getLogin();
 	}
-	elseif($url == "checkadmin")
+	elseif($url == "checkuser")
 	{
-		$AuthController->setbackOffice($_POST);
+		$AuthController->check_user($_POST);
 	}
 	elseif($url == "logout")
 	{
-		$AuthController->getLogout();
+		$AuthController->Logout();
 	}
 	elseif($url == "register")
 	{
@@ -48,6 +47,11 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	{
 		$AuthController->setRegister($_POST);
 	}
+
+  elseif($url == "client_script")
+	{
+		$AuthController->generate($_POST);
+  }
 	elseif($url == str_starts_with($url, "apiV1/"))
 	{
 		if($url == str_starts_with($url, "apiV1/get_form"))

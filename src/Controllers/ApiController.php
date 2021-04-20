@@ -23,8 +23,10 @@ class ApiController{
         $data['client_id'] = $client_id;
           if($ip_adress && filter_var($ip_adress, FILTER_VALIDATE_IP)){ //Control we have ip_adress & is valid ip_adress
             $existing_ip = $this->control_ip($client_id, $ip_adress);
+
             if($existing_ip){
               $data['ip_adress'] = $existing_ip; // On vérifie que l'adresse ip est connu pour le client
+
               $choices = $this->getChoices($client_id, $ip_adress); // On stocke les choix visiteurs pour l'adresse ip du site client
               if(is_array($choices) && !empty($choices) && $choices){
                 $data['choices'] = $choices;
@@ -48,9 +50,6 @@ class ApiController{
     }
   }
 
-  public function create_key(){ // Create Api_key
-    
-  }
 
   public function control_key($key){ // control api_key & return client_ID who are client & active
     $id = $this->repo->get_key($key);
@@ -92,4 +91,6 @@ class ApiController{
     }
     
   }
+
+ 
 }
