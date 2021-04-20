@@ -28,8 +28,8 @@ class Auth{
 
   public function getBackoffice(){
 		if($_SESSION['id']){
-			$id=$_SESSION['id'];
-			$scripts_paths=$this->repo->get_paths($id);
+			$id_client=$_SESSION['id'];
+			$scripts_paths=$this->repo->get_paths($id_client);
 			$script_path = $scripts_paths[0]["script_path"] ?? null;
 			$client_script_1 = $scripts_paths[0]['client_script_1'] ?? null;
 			$client_script_2 = $scripts_paths[0]['client_script_2'] ?? null;
@@ -56,6 +56,8 @@ class Auth{
 			$datas["password"] = password_hash($datas["password"], PASSWORD_DEFAULT);
 			
 			$id_client = $this->repo->insert_user($datas);
+			$today = date("Y-m-d",strtotime("now"));
+			$this->repo->create_empty_row($id_client, $today);
 		
 			require_once "Views/login.php";
 		}else{
@@ -127,16 +129,16 @@ class Auth{
 		$post['script_1'], $post['script_2'], $post['script_3'], $post['script_4'] , $today);
 	}
 
-	public function generate_script($id_client, $api_key, $file, $client_script_1, $client_script_2 , $client_script_3, $client_script_4){
+	public function generate_script($id_client, $api_key, $script_path, $client_script_1, $client_script_2 , $client_script_3, $client_script_4){
 
-		//$company=$this->repo->get_company($id_client);
-		//$path="http://localhost/Cloud_Project/src/js/user_script/";
-		//$file = $path."pop-up-rgpd-".$company["entreprise"].'.js';
+		$company=$this->repo->get_company($id_client);
+		$path="js/user_script/";
+		$file = $path."pop-up-rgpd-".$company["entreprise"].'.js';
 
 		$today = date("Y-m-d",strtotime("now"));
 
 		if(!file_exists($file)){
-			$current = file_get_contents($file);
+			
 			$current= '
 			function get_ip(){
 				fetch("https://api.my-ip.io/ip.json")
@@ -205,11 +207,13 @@ class Auth{
 			}';
 
 			file_put_contents($file, $current);
-			$this->repo->insert_key($id_client,	$api_key , $file, $today);
+			$this->repo->update_key($id_client,	$api_key , $script_path, $client_script_1, $client_script_2, $client_script_3, $client_script_4, $today);
+
+			require_once "Views/backoffice.php";
 		}else{
-      var_dump("toto");
+			//$current = file_get_contents(urlencode($file), true, null);
 			unlink($file);
-			$this->generate_script($id_client, $api_key, $file);
+			$this->generate_script($id_client, $api_key, $file, $client_script_1, $client_script_2 , $client_script_3, $client_script_4);
 		}
 
 	}

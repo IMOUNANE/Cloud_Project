@@ -11,7 +11,7 @@
     <input type="text" name="script_3" value="<?=$client_script_3?>">
     <label for="script_4">Script à ...</label>
     <input type="text" name="script_4" value="<?=$client_script_4?>">
-    <input type="hidden" name="client_id" value="<?=$id?>">
+    <input type="hidden" name="client_id" value="<?=$id_client?>">
 
     <input type=submit>
     

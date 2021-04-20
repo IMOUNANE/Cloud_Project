@@ -48,16 +48,14 @@ class Auth_repo{
         return $id_client;
         
      }
-     public function insert_key($id_client,$key,$path,$today){
+     public function create_empty_row($id_client,$today){
         $stmt = $this->db->connection->prepare("
-        INSERT INTO api_key (client_id, client_key,script_path,last_modification) 
-        VALUES (:client_id, :client_key,:script_path,:last_modification)
+        INSERT INTO api_key (client_id, last_modification) 
+        VALUES (:client_id, :last_modification)
         ");
         
         $stmt->execute([
             "client_id"=>$id_client,
-            "client_key" => $key,
-            "script_path"=>$path,
             "last_modification"=>$today,
         ]);
      }
@@ -69,11 +67,19 @@ class Auth_repo{
         return $result[0]["client_key"];
 
      }
-     public function update_key($id, $key,$path, $client_script_1, $client_script_2, $client_script_3, $client_script_4,$today){
-        $stmt = $this->db->connection->prepare("UPDATE api_key SET client_key=:client_key,script_path,client_script_1,client_script_2,client_script_3,client_script_4, last_modification  WHERE client_id= :client_id");
+
+     public function update_key($id, $key, $path, $client_script_1, $client_script_2, $client_script_3, $client_script_4,$today){
+        $stmt = $this->db->connection->prepare("
+        UPDATE api_key SET
+        client_key=:client_key,script_path=:script_path,client_script_1=:client_script_1,client_script_2=:client_script_2
+        ,client_script_3=:client_script_3,client_script_4=:client_script_4, last_modification=:last_modification
+        WHERE client_id= :client_id
+        ");
+
+        var_dump($client_script_3);
        
         $stmt->execute([
-            "client_id" =>$id,
+            "client_id" =>(int)$id,
             "client_key" =>$key,
             "script_path"=>$path,
             "client_script_1"=>$client_script_1,
@@ -83,6 +89,7 @@ class Auth_repo{
             "last_modification"=>$today
         ]);
      }
+
      public function get_paths($id){
         $stmt = $this->db->connection->prepare("SELECT script_path, client_script_1, client_script_2, client_script_3,client_script_4 FROM api_key WHERE client_id = :client_id");
         $stmt->execute([
