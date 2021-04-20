@@ -31,7 +31,6 @@ class Auth{
 			$id_client=$_SESSION['id'];
 			$scripts_paths=$this->repo->get_paths($id_client);
 			$script_path = $scripts_paths[0]["script_path"] ?? null;
-			var_dump($script_path);
 			$client_script_1 = $scripts_paths[0]['client_script_1'] ?? null;
 			$client_script_2 = $scripts_paths[0]['client_script_2'] ?? null;
 			$client_script_3 = $scripts_paths[0]['client_script_3'] ?? null;
@@ -116,7 +115,7 @@ class Auth{
 		$company=$this->repo->get_company($post['client_id']);
 
 		$path ="http://localhost/Cloud_Project/src/js/user_script/";
-		$file = $path."pop-up-rgpd-".trim(htmlspecialchars($company["entreprise"])).'.js';
+		$file = $path."pop-up-rgpd-".htmlspecialchars(trim(str_replace(" ","_", $company["entreprise"]))).'.js';
 		$client_script_1 = $post['script_1'] ?? null;
 		$client_script_2 = $post['script_2'] ?? null;
 		$client_script_3 = $post['script_3'] ?? null;
@@ -134,7 +133,7 @@ class Auth{
 
 		$company=$this->repo->get_company($id_client);
 		$path="js/user_script/";
-		$file = $path."pop-up-rgpd-".trim(htmlspecialchars($company["entreprise"])).'.js';
+		$file = $path."pop-up-rgpd-".htmlspecialchars(trim(str_replace(" ","_", $company["entreprise"]))).'.js';
 
 		$today = date("Y-m-d",strtotime("now"));
 

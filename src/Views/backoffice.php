@@ -18,6 +18,31 @@
 </form>
 <div>
     <label for="script_path">Lien du Script</label>
-    <input name="script_path" value='<?='<script src="'.$script_path.'"></script>'?>' disabled="disabled">
-    <button type="button">Copier le script</button><!--Ajouter js-->
+    <input id="script_path" name="script_path" value='<?='<script src="'.$script_path.'"></script>'?>' disabled="disabled">
+    <input type="hidden" id="copy_link">
+    <button type="button" onclick="copy_link()">Copier le script</button><!--Ajouter js-->
 </div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+function copy_link(){
+    let linkToCopy = document.getElementById('copy_link');
+        linkToCopy.value = document.getElementById('script_path').value;
+        linkToCopy.setAttribute('type', 'text');
+        linkToCopy.select();
+
+    let success = document.execCommand('copy');
+
+    if(success){
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Lien copié avec succès !',
+            showConfirmButton: false,
+            timer: 1000
+        })
+        linkToCopy.value = '';
+        linkToCopy.setAttribute('type', 'hidden');
+    }
+}
+</script>
