@@ -13,11 +13,11 @@ class ApiController{
     $key_arr = explode('key=', $parts[1]);
     $key = $key_arr[1];
     $ip_adress_arr = explode('ip_adress=', $parts[2]);
-    $ip_adress = $ip_adress_arr[1];
+    $ip_adress = $ip_adress_arr[1] ?? $ip_adress_arr[0];
     
     if($key){
       $client_id_arr = $this->control_key($key); //Need to return Client ID
-      $client_id = $client_id_arr['id'];
+      $client_id = $client_id_arr['id'] ?? null;
       if($client_id){
 
         $data = array();

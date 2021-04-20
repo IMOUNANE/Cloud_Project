@@ -105,13 +105,12 @@ class Auth{
 		$salt = random_int(PHP_INT_MIN, PHP_INT_MAX);
 		$signature = hash_hmac('sha256', $salt, $secretKey, true);
 		$encodedSignature = base64_encode($signature);
-		$encodedSignature = urlencode(str_ireplace("=", "z", $encodedSignature));
+		$encodedSignature = str_ireplace("=", "z", $encodedSignature);
 	
 		return $encodedSignature; 
   }
 
 	public function generate($post){
-		$new_key = $this->create_key($post['client_id']);
 		$company=$this->repo->get_company($post['client_id']);
 
 		$path ="http://localhost/Cloud_Project/src/js/user_script/";
@@ -121,20 +120,16 @@ class Auth{
 		$client_script_3 = $post['script_3'] ?? null;
 		$client_script_4 = $post['script_4'] ?? null;
 
-		//$today = date("Y-m-d",strtotime("now"));
+		$this->generate_script($post['client_id'], $file, $client_script_1, $client_script_2 , $client_script_3, $client_script_4);
 
-		$this->generate_script($post['client_id'], $new_key, $file, $client_script_1, $client_script_2 , $client_script_3, $client_script_4);
-
-		//$this->repo->update_key($post['client_id'], $new_key, $file,
-		//$post['script_1'], $post['script_2'], $post['script_3'], $post['script_4'] , $today);
 	}
 
-	public function generate_script($id_client, $api_key, $script_path, $client_script_1, $client_script_2 , $client_script_3, $client_script_4){
+	public function generate_script($id_client, $script_path, $client_script_1, $client_script_2 , $client_script_3, $client_script_4){
 
 		$company=$this->repo->get_company($id_client);
 		$path="js/user_script/";
 		$file = $path."pop-up-rgpd-".htmlspecialchars(trim(str_replace(" ","_", $company["entreprise"]))).'.js';
-
+		$api_key = $this->create_key($id_client);
 		$today = date("Y-m-d",strtotime("now"));
 
 		if(!file_exists($file)){
@@ -213,7 +208,7 @@ class Auth{
 		}else{
 			//$current = file_get_contents(urlencode($file), true, null);
 			unlink($file);
-			$this->generate_script($id_client, $api_key, $script_path, $client_script_1, $client_script_2 , $client_script_3, $client_script_4);
+			$this->generate_script($id_client, $script_path, $client_script_1, $client_script_2 , $client_script_3, $client_script_4);
 		}
 
 	}

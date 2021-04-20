@@ -9,7 +9,7 @@
 				}
 		
 			function get_infos(ip_adress){
-				fetch("http://localhost/cloud_project/src/?url=apiV1/apikey=hwuN6w9RNPJb%2FceiAZykeBdXEIKqaaXKC2TxThN4xiEz/ip_adress="+ip_adress)
+				fetch("http://localhost/cloud_project/src/?url=apiV1/apikey=pn7IPYeXfsWImp0KWrryt0wf2Hb5MnuTMVOeTkSmim4z/ip_adress="+ip_adress)
 					.then((response) => response.json())
 					.then((data) => {
 						console.log(data);
@@ -24,21 +24,21 @@
 
 								body = document.querySelector("body")
 								script = document.createElement("script")
-								script.setAttribute("src", "https://localhost/Cloud_Project/src/js/user_script/pop-up-rgpd-ethem.js")
+								script.setAttribute("src", "https://www.cssscript.com/customizable-popup-boxes-vanilla-javascript-poppypopup/")
 								body.appendChild(script)
 							}
 							if(parseInt(choices.user_choice_2, 10) === 1){
 
 								body = document.querySelector("body")
 								script = document.createElement("script")
-								script.setAttribute("src", "https://localhost/Cloud_Project/src/js/user_script/pop-up-rgpd-ethem.js")
+								script.setAttribute("src", "")
 								body.appendChild(script)
 							}
 							if(parseInt(choices.user_choice_3, 10) === 1){
 
 								body = document.querySelector("body")
 								script = document.createElement("script")
-								script.setAttribute("src", "")
+								script.setAttribute("src", "https://www.cssscript.com/customizable-popup-boxes-vanilla-javascript-poppypopup/")
 								body.appendChild(script)
 							}
 							if(parseInt(choices.user_choice_4, 10) === 1){

@@ -18,9 +18,13 @@
 </form>
 <div>
     <label for="script_path">Lien du Script</label>
-    <input id="script_path" name="script_path" value='<?='<script src="'.$script_path.'"></script>'?>' disabled="disabled">
+    <input type="text" id="script_path" name="script_path" value='<?='<script src="'.$script_path.'"></script>'?>' disabled="disabled">
     <input type="hidden" id="copy_link">
     <button type="button" onclick="copy_link()">Copier le script</button><!--Ajouter js-->
+
+    <p>Le registre simplifié, ces exemples et modèles pour le respect de la RGPD</p>
+    <button type="button"><a href="https://www.cnil.fr/sites/default/files/atoms/files/registre-traitement-simplifie.ods">Télécharger : Registre Simplifié</a></button>
+
 </div>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
