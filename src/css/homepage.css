@@ -1,0 +1,300 @@
+.hero-container {
+  background-image: url("../assets/img/background-homepage-img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.description-container {
+  color: white;
+  padding: 140px 30px 0px 30px;
+}
+
+.hero-title {
+  font-family: "Montserrat-Medium";
+  font-size: 22px;
+  line-height: 33px;
+  margin-bottom: 18px;
+}
+
+.hero-description {
+  font-family: "Montserrat";
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.service-container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.service-details {
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.service-details,
+.informations-container,
+.start,
+.price {
+  opacity: 0;
+  transform: translateY(50px) scale(1);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.service-detail-icon {
+  margin-right: 10px;
+  height: 80px;
+}
+
+.service-detail-title {
+  text-transform: uppercase;
+  font-family: "Montserrat-SemiBold";
+  color: #605ff6;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.service-detail-description {
+  font-size: 16px;
+  font-family: "Montserrat";
+  line-height: 24px;
+  color: #3d3d3d;
+}
+
+.control-container {
+  padding-left: 30px;
+}
+.control {
+  order: -1;
+}
+
+.business-container-title {
+  color: #605ff6;
+  font-family: "Montserrat-SemiBold";
+  font-size: 22px;
+  text-align: center;
+}
+
+.informations,
+.start,
+.price {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 80px;
+}
+
+.informations-title {
+  color: #605ff6;
+  margin-bottom: 16px;
+  font-family: "Montserrat-Medium";
+  font-size: 22px;
+}
+
+.informations-subtitle {
+  color: #3d3d3d;
+  margin-bottom: 90px;
+  font-family: "Montserrat-Medium";
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.information-container:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.information-icon {
+  height: 64px;
+}
+
+.information-title {
+  font-family: "Montserrat-Medium";
+  font-size: 18px;
+  color: #3d3d3d;
+}
+
+.information-description {
+  font-family: "Montserrat";
+  font-size: 18px;
+  line-height: 27px;
+  color: #3d3d3d;
+  margin-top: 18px;
+}
+
+.information {
+  margin-top: 4px;
+}
+
+.strong {
+  color: #605ff6;
+  font-family: "Montserrat-Medium";
+}
+
+.background-element {
+  display: none;
+  position: absolute;
+  right: 0;
+}
+
+.is-reached {
+  opacity: 1;
+  transform: none;
+}
+
+.start {
+  color: #3d3d3d;
+}
+
+.title {
+  font-family: "Montserrat-Medium";
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.description {
+  font-family: "Montserrat";
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 40px;
+}
+
+.button-start {
+  background-color: #605ff6;
+  border-radius: 50px;
+  border: none;
+  padding: 8px 18px;
+  color: white;
+  display: inline-flex;
+  font-size: 16px;
+  font-family: "Montserrat-Medium";
+  align-items: center;
+  margin-right: 22px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.button-start:hover {
+  background-color: #8887e2;
+}
+
+.chevron {
+  margin-left: 8px;
+}
+
+.price {
+  width: calc(100%-140px);
+  color: #3d3d3d;
+}
+
+.price-icon {
+  margin-right: 16px;
+}
+
+.link {
+  font-size: 14px;
+  font-family: "Montserrat-SemiBold";
+  color: #605ff6;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+@media (min-width: 900px) {
+  .description-container {
+    padding: 200px 0px 0px 90px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+
+  .hero-description {
+    line-height: 33px;
+    font-size: 22px;
+    width: 50%;
+  }
+
+  .service-container {
+    padding-left: 200px;
+    padding-right: 180px;
+  }
+
+  .service-detail-icon {
+    margin-right: 80px;
+    height: auto;
+  }
+
+  .service-details {
+    margin-bottom: 180px;
+  }
+
+  .service-detail-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .service-detail-description {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .business-container-title {
+    font-size: 32px;
+  }
+
+  .informations,
+  .start,
+  .price {
+    padding-left: 140px;
+    padding-right: 140px;
+    margin-bottom: 200px;
+  }
+
+  .informations-subtitle {
+    margin-bottom: 180px;
+    font-size: 28px;
+    line-height: 42px;
+  }
+
+  .informations-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .information-container:not(:last-child) {
+    padding-right: 32px;
+  }
+
+  .information-description {
+    margin-top: 40px;
+  }
+
+  .background-element {
+    display: block;
+  }
+
+  .description {
+    width: 60%;
+  }
+
+  .price {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .button-start {
+    padding: 12px 22px;
+    font-size: 18px;
+  }
+
+  .contact {
+    display: inline-flex;
+  }
+
+  .link {
+    font-size: 18px;
+    margin-top: 0px;
+  }
+}
