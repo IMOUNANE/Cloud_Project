@@ -1,27 +1,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <section class="footer">
-      <div class="go-up" id="goUp">Haut de page</div>
+      <div class="banner-footer"></div>
 
         <div class="footer-container">
-          <ul class="headings-container">
-            <li class="heading">Nous contacter</li>
-            <li class="heading">Nous rejoindre</li>
-            <li class="heading">Mentions légales</li>
-            <li class="heading">Politique de confidentialité</li>
-            <li class="heading">CGU</li>
-          </ul>
           
-          <div>
-            <img src="css/assets/img/logoRgpd.png" alt="">
+          <div class="container">
+            <img class="logo-footer" src="assets/img/logoRgpd.png" alt="">
           </div>
 
-          <div>
-            <p>content</p>
-            <div class="icon-container">
-              <img class="icon-footer" src="css/assets/icon/linkedin-icon.svg" alt="">
-              <img class="icon-footer" src="css/assets/icon/twitter-icon.svg" alt="">
-              <img class="icon-footer" src="css/assets/icon/facebook-icon.svg" alt="">
-            </div>
+          <ul class="headings-container container">
+            <a href="" class="heading">CGU</a>
+            <a href="" class="heading">Nous rejoindre</a>
+            <a href="" class="heading">Nous contacter</a>
+            <a href="" class="heading">Mentions légales</a>
+            <a href="" class="heading">Politique de confidentialité</a>     
+          </ul>
+
+           <div class="icon-container">
+            <img class="icon-footer" src="assets/icon/linkedin-icon.svg" alt="">
+            <img class="icon-footer" src="assets/icon/twitter-icon.svg" alt="">
+            <img class="icon-footer" src="assets/icon/facebook-icon.svg" alt="">
           </div>
       </div>
 
