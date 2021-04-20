@@ -208,7 +208,7 @@ class Auth{
 			}';
 
 			file_put_contents($file, $current);
-			var_dump($script_path);
+	
 			$this->repo->update_key($id_client,	$api_key , $script_path, $client_script_1, $client_script_2, $client_script_3, $client_script_4, $today);
 			$this->getBackoffice();
 		}else{
