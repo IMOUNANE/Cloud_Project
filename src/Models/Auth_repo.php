@@ -20,7 +20,7 @@ class Auth_repo{
     public function isAlreadyUser(){
         $stmt = $this->db->connection->prepare("SELECT email FROM users");
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
     }
     public function get_company($id){
         $stmt = $this->db->connection->prepare("SELECT entreprise FROM users WHERE id=".$id);
@@ -76,7 +76,6 @@ class Auth_repo{
         WHERE client_id= :client_id
         ");
 
-        var_dump($client_script_3);
        
         $stmt->execute([
             "client_id" =>(int)$id,

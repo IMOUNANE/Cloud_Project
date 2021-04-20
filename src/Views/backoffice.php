@@ -18,6 +18,6 @@
 </form>
 <div>
     <label for="script_path">Lien du Script</label>
-    <input name="script_path" value="<?=$script_path?>" disabled="disabled">
+    <input name="script_path" value='<?='<script src="'.$script_path.'"></script>'?>' disabled="disabled">
     <button type="button">Copier le script</button><!--Ajouter js-->
 </div>

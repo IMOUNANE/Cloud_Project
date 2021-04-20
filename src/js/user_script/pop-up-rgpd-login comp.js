@@ -9,7 +9,7 @@
 				}
 		
 			function get_infos(ip_adress){
-				fetch("http://localhost/cloud_project/src/?url=apiV1/apikey=gYx14YqDa8NEVWwJ3vEWI%2F79rmaBzB8EvJo0YO5cgyw%3D/ip_adress="+ip_adress)
+				fetch("http://localhost/cloud_project/src/?url=apiV1/apikey=2uAqTUsjvGKlYFJBqN4hFcM45couKXJZLiOS41L6rvU%3D/ip_adress="+ip_adress)
 					.then((response) => response.json())
 					.then((data) => {
 						console.log(data);

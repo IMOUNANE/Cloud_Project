@@ -9,7 +9,7 @@
 				}
 		
 			function get_infos(ip_adress){
-				fetch("http://localhost/cloud_project/src/?url=apiV1/apikey=gYx14YqDa8NEVWwJ3vEWI%2F79rmaBzB8EvJo0YO5cgyw%3D/ip_adress="+ip_adress)
+				fetch("http://localhost/cloud_project/src/?url=apiV1/apikey=gG7l9RAOT0OqUBWOcgOwTjTLxzZ4OSYX0fWbGS0xfjIz/ip_adress="+ip_adress)
 					.then((response) => response.json())
 					.then((data) => {
 						console.log(data);
@@ -38,14 +38,14 @@
 
 								body = document.querySelector("body")
 								script = document.createElement("script")
-								script.setAttribute("src", "https://localhost/Cloud_Project/src/js/user_script/pop-up-rgpd-ethem.js")
+								script.setAttribute("src", "")
 								body.appendChild(script)
 							}
 							if(parseInt(choices.user_choice_4, 10) === 1){
 
 								body = document.querySelector("body")
 								script = document.createElement("script")
-								script.setAttribute("src", "https://localhost/Cloud_Project/src/js/user_script/pop-up-rgpd-ethem.js")
+								script.setAttribute("src", "")
 								body.appendChild(script)
 							}
 						}

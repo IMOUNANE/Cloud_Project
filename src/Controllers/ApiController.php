@@ -19,6 +19,7 @@ class ApiController{
       $client_id_arr = $this->control_key($key); //Need to return Client ID
       $client_id = $client_id_arr['id'];
       if($client_id){
+
         $data = array();
         $data['client_id'] = $client_id;
           if($ip_adress && filter_var($ip_adress, FILTER_VALIDATE_IP)){ //Control we have ip_adress & is valid ip_adress
@@ -41,7 +42,7 @@ class ApiController{
             echo json_encode($error);
           }
       }else{
-        $error = ["error" => "Invalid API_Key ?!"];
+        $error = ["error" => "Invalid API_Key ?! Or Inactive account"];
         echo json_encode($error);
       }
     }else{

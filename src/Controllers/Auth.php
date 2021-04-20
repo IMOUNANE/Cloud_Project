@@ -31,6 +31,7 @@ class Auth{
 			$id_client=$_SESSION['id'];
 			$scripts_paths=$this->repo->get_paths($id_client);
 			$script_path = $scripts_paths[0]["script_path"] ?? null;
+			var_dump($script_path);
 			$client_script_1 = $scripts_paths[0]['client_script_1'] ?? null;
 			$client_script_2 = $scripts_paths[0]['client_script_2'] ?? null;
 			$client_script_3 = $scripts_paths[0]['client_script_3'] ?? null;
@@ -48,17 +49,17 @@ class Auth{
 	public function setRegister($datas){
 
 		$is_already_registered = $this->repo->isAlreadyUser();
-		if(!array_key_exists($datas['mail'], $is_already_registered) && filter_var($datas['mail'], FILTER_VALIDATE_EMAIL) && strlen($datas['password']) > 3 && $datas['company_name']){
+		if(!in_array($datas['mail'], $is_already_registered[0]) && filter_var($datas['mail'], FILTER_VALIDATE_EMAIL) && strlen($datas['password']) > 3 && $datas['company_name']){
 			$datas["ip_adress"]= $_SERVER['REMOTE_ADDR'];
 			$datas["creation_date"] = date("Y-m-d H:i:s", strtotime("now"));
 			$datas["is_active"] = 1;
-			$datas["is_client"] = 0;
+			$datas["is_client"] = 1;
 			$datas["password"] = password_hash($datas["password"], PASSWORD_DEFAULT);
 			
 			$id_client = $this->repo->insert_user($datas);
 			$today = date("Y-m-d",strtotime("now"));
 			$this->repo->create_empty_row($id_client, $today);
-		
+			
 			require_once "Views/login.php";
 		}else{
 			if(empty($datas['mail'])){
@@ -105,35 +106,35 @@ class Auth{
 		$salt = random_int(PHP_INT_MIN, PHP_INT_MAX);
 		$signature = hash_hmac('sha256', $salt, $secretKey, true);
 		$encodedSignature = base64_encode($signature);
-		$encodedSignature = urlencode($encodedSignature);
+		$encodedSignature = urlencode(str_ireplace("=", "z", $encodedSignature));
 	
 		return $encodedSignature; 
   }
 
 	public function generate($post){
-		//On récupère bien les données en $_POST
 		$new_key = $this->create_key($post['client_id']);
-
 		$company=$this->repo->get_company($post['client_id']);
+
 		$path ="http://localhost/Cloud_Project/src/js/user_script/";
-		$file = $path."pop-up-rgpd-".$company["entreprise"].'.js';
+		$file = $path."pop-up-rgpd-".trim(htmlspecialchars($company["entreprise"])).'.js';
 		$client_script_1 = $post['script_1'] ?? null;
 		$client_script_2 = $post['script_2'] ?? null;
 		$client_script_3 = $post['script_3'] ?? null;
 		$client_script_4 = $post['script_4'] ?? null;
 
-		$today = date("Y-m-d",strtotime("now"));
+		//$today = date("Y-m-d",strtotime("now"));
+
 		$this->generate_script($post['client_id'], $new_key, $file, $client_script_1, $client_script_2 , $client_script_3, $client_script_4);
 
-		$this->repo->update_key($post['client_id'], $new_key, $file,
-		$post['script_1'], $post['script_2'], $post['script_3'], $post['script_4'] , $today);
+		//$this->repo->update_key($post['client_id'], $new_key, $file,
+		//$post['script_1'], $post['script_2'], $post['script_3'], $post['script_4'] , $today);
 	}
 
 	public function generate_script($id_client, $api_key, $script_path, $client_script_1, $client_script_2 , $client_script_3, $client_script_4){
 
 		$company=$this->repo->get_company($id_client);
 		$path="js/user_script/";
-		$file = $path."pop-up-rgpd-".$company["entreprise"].'.js';
+		$file = $path."pop-up-rgpd-".trim(htmlspecialchars($company["entreprise"])).'.js';
 
 		$today = date("Y-m-d",strtotime("now"));
 
@@ -207,13 +208,13 @@ class Auth{
 			}';
 
 			file_put_contents($file, $current);
+			var_dump($script_path);
 			$this->repo->update_key($id_client,	$api_key , $script_path, $client_script_1, $client_script_2, $client_script_3, $client_script_4, $today);
-
-			require_once "Views/backoffice.php";
+			$this->getBackoffice();
 		}else{
 			//$current = file_get_contents(urlencode($file), true, null);
 			unlink($file);
-			$this->generate_script($id_client, $api_key, $file, $client_script_1, $client_script_2 , $client_script_3, $client_script_4);
+			$this->generate_script($id_client, $api_key, $script_path, $client_script_1, $client_script_2 , $client_script_3, $client_script_4);
 		}
 
 	}

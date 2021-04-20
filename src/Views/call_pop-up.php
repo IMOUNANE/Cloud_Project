@@ -1,2 +1,1 @@
-<script type="text/javascript" src="http://localhost:80/cloud_project/src/js/pop-up.js"></script>
-<script type="text/javascript">//window.onload = () => {setTimeout( () => {get_ip()}, 5000)}</script>
+<script src="http://localhost/Cloud_Project/src/js/user_script/pop-up-rgpd-Toto tata.js"></script>
