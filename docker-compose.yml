@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  php:
+    build: ./docker/php
+    ports:
+      - "8001:80"
+  image: "localhost"
+  db: 
+    image: "mysql:8"
+    ports: 
+      - "3304:3304"
+    environment:
+      MYSQL_DATABASE: dev
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+            volumes:
+              - ./sql:/docker-entrypoint-initdb.d
+              - persistent:/var/lib/mysql
+          networks:
+              - default
+      phpmyadmin:
+          image: phpmyadmin/phpmyadmin
+          links: 
+              - db:db
+          ports:
+              - 8000:80
+          environment:
+              MYSQL_USER: user
+              MYSQL_PASSWORD: test
+              MYSQL_ROOT_PASSWORD: test
+  volumes:
+      persistent:

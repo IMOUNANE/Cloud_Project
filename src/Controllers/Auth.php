@@ -30,6 +30,7 @@ class Auth{
 			if(isset($_SESSION['id'])){
 				$id_client=$_SESSION['id'];
 				$scripts_paths=$this->repo->get_paths($id_client);
+				$company=$this->repo->get_company($id_client);
 				$script_path = $scripts_paths[0]["script_path"] ?? null;
 				$client_script_1 = $scripts_paths[0]['client_script_1'] ?? null;
 				$client_script_2 = $scripts_paths[0]['client_script_2'] ?? null;
@@ -81,17 +82,17 @@ class Auth{
 		}
 	}
 
-	public function mail_provider($email){
+	public function mail_provider($mail){
 		$email = new \SendGrid\Mail\Mail(); 
 		$email->setFrom("romain.feregotto@hetic.net", "RGPD - ADMIN");
 		$email->setSubject("Bienvenue chez My RGPD");
-		$email->addTo($email, "prospect");
+		$email->addTo($mail, "prospect");
 		$email->addContent(
 				"text/html", '<strong>
 				Bonjour !
-				Nous avons le plaisir de vous confirmer votre inscription sur MY-RGPD et vous souhaitons la bienvenu.<br><br>
-				Vous pouvez dès à présent vous connecter à votre espace et beneficer de l’ensemble de nos services gratuitement pendant sept jours.
-				À bientôt 
+				Nous avons le plaisir de vous confirmer votre inscription sur MY-RGPD<br> et vous souhaitons la bienvenu.<br><br>
+				Vous pouvez dès à présent vous connecter à votre espace<br> et beneficer de l’ensemble de nos services gratuitement pendant sept jours.<br><br>
+				À bientôt <br><br>
 				
 				<a href="http://localhost/cloud_project/src/index.php?url=backoffice">COMMENCER</a>
 				</strong>'

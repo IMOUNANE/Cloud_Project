@@ -1,4 +1,4 @@
-<!--MODEL A GENERER EN JS-->
+
 <form action="?url=post_ajax" method="POST">
   <label for="user_choice_1">Choix 1 [TITRE A DEFINIR]</label>
   <input type="radio" name="user_choice_1" value="0">
