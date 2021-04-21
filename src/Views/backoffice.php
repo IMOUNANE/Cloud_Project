@@ -72,21 +72,6 @@
     <div class="service-container-child">
         <div class="title"><h1>Hello</h1></div>
 
-        <div class="service-header">
-            <div class="second-title">Personalisez</div>
-            <div>Choisissez votre thème personalisé</div>
-            <div class="service-header-bottom">
-                <input type="color" id="colorpicker">
-                <button class="button-choice" type="submit" value="Choisir">Choisir</button>
-            </div>
-           
-        </div>
-        <div class="service-header">
-            <div class="second-title">Liens</div>
-            <div>Pour commencer à utiliser nos services rendez-vous dans la rubrique API de ton espace.</div>
-        </div>
-       
-
         <form method="post" action="?url=client_script">
             <p>
                 <label class="label-choice" for="script_1">LIEN ANALYSE D'AUDIENCE</label>
@@ -132,6 +117,21 @@ Ce script est destiné à un usage strictement privée et ne doit pas être part
             <p>Le registre simplifié, ces exemples et modèles pour le respect de la RGPD</p>
             <button class="button-choice" type="button"><a href="https://www.cnil.fr/sites/default/files/atoms/files/registre-traitement-simplifie.ods">Télécharger : Registre Simplifié</a></button>
         </div>
+
+        <div class="service-header">
+            <div class="second-title">Personnaliser</div>
+            <div>Choisissez votre thème personnalisé</div>
+            <div class="service-header-bottom">
+                <input type="color" id="colorpicker">
+                <button class="button-choice" type="submit" value="Choisir">Choisir</button>
+            </div>
+           
+        </div>
+        <div class="service-header">
+            <div class="second-title">Liens</div>
+            <div>Pour commencer à utiliser nos services rendez-vous dans la rubrique API de ton espace.</div>
+        </div>
+
 
     </div>
 </section>
