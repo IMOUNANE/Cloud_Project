@@ -44,11 +44,26 @@ class Auth{
 		}
   }
 
+	function matrice_to_array($tabl){
+		$new_tab = array();
+		foreach($tabl as $key=>$value){
+			if(is_array($value)){
+				//echo $key."IS AN ARRAY RECURSIVE CALLING";
+				$new_tab=array_merge($this->matrice_to_array($value),$new_tab);
+			}else{
+				$new_tab[]=$value;
+			}
+		}
+		return array_unique($new_tab);
+	}
+
 
 	public function setRegister($datas){
 
 		$is_already_registered = $this->repo->isAlreadyUser();
-		if(!in_array($datas['mail'], $is_already_registered[0]) && filter_var($datas['mail'], FILTER_VALIDATE_EMAIL) && strlen($datas['password']) > 3 && $datas['company_name']){
+		//$all_mail= $this->matrice_to_array($is_already_registered);
+		
+		if(!in_array($datas['mail'], $is_already_registered) && filter_var($datas['mail'], FILTER_VALIDATE_EMAIL) && strlen($datas['password']) > 3 && $datas['company_name']){
 			$datas["ip_adress"]= $_SERVER['REMOTE_ADDR'];
 			$datas["creation_date"] = date("Y-m-d H:i:s", strtotime("now"));
 			$datas["is_active"] = 1;
@@ -64,15 +79,19 @@ class Auth{
 		}else{
 			if(empty($datas['mail'])){
 				echo "<script>alert('Pas d'adresse e-mail renseigné')</script>";
+				require_once "Views/register.php";
 			}
 			elseif(empty($datas['password'])){
 				echo "<script>alert('Pas de mot de passe renseigné')</script>";
+				require_once "Views/register.php";
 			}
 			elseif(empty($datas['company_name'])){
 				echo "<script>alert('Pas d\'entreprise renseigné')</script>";
+				require_once "Views/register.php";
 			}
 			else{
 				echo "<script>alert('Cette adresse e-mail existe déjà')</script>";
+				require_once "Views/register.php";
 			}
 		}
 	}

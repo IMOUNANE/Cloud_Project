@@ -35,9 +35,9 @@
           <form method="POST" action="?url=subscribe">
             <div class="contentInput">
               <p>
-                <label for="company-name"></label>
+                <label for="company_name"></label>
                 <img class="iconLogin" src="assets/icon/icon-user.svg" alt="icon user">
-                <input class="inputSignUp" name="company-name" type="text" placeholder="Entreprise" required/>
+                <input class="inputSignUp" name="company_name" type="text" placeholder="Entreprise" required/>
               </p>
             </div>
 
@@ -45,7 +45,7 @@
               <p>
                 <label for="mail"></label>
                 <img class="iconLogin" src="assets/icon/icon-email.svg" alt="icon email">
-                <input class="inputSignUp" name="email" type="text" placeholder="Email" required/>
+                <input class="inputSignUp" name="mail" type="text" placeholder="Email" required/>
               </p>
             </div>
 
@@ -54,7 +54,7 @@
               <p>
                 <label for="password"></label>
                 <img class="iconLogin" src="assets/icon/icon-password.svg" alt="icon password">
-                <input class="inputSignUp" name="password" type="password" placeholder="Mot de passe" />
+                <input class="inputSignUp" name="password" type="password" placeholder="Mot de passe" required/>
               </p>
             </div>
 
