@@ -17,7 +17,7 @@
                             <p>
                                 <label for="email"></label>
                                 <img class="iconLogin" src="assets/icon/icon-email.svg" alt="icon email">
-                                <input class="inputSignUp" name="email" type="text" placeholder="Email" required/>
+                                <input class="inputSignUp" name="login" type="text" placeholder="Email" required/>
                             </p>
                         </div>
                         <div class="contentInput">
