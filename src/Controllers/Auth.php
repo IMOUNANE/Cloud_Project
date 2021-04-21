@@ -117,10 +117,10 @@ class Auth{
 	}
 
 	public function check_user($inputs) {
-
+		
 		if(isset($inputs["login"]) && isset($inputs["password"])){
-			$inputs["login"]=htmlspecialchars(trim($inputs['login']));
-			$inputs["password"]=htmlspecialchars(trim($inputs['password']));
+			$inputs["login"]= trim($inputs['login']);
+			$inputs["password"] = trim($inputs['password']);
 			$datas=$this->repo->check_auth($inputs["login"]);
 				if(isset($datas)){   
 					$data=$datas[0];
