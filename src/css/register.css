@@ -52,7 +52,6 @@ body {
 .contentLogin {
   display: flex;
   justify-content: center;
-  margin-bottom: 10%;
 }
 
 .contentInput {
@@ -71,7 +70,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-family: "Montserrat-semiBold";
+  font-family: "Montserrat";
   font-size: 28px;
   color: #605ff6;
 }
@@ -95,14 +94,14 @@ input {
 }
 
 .inputSignUp::placeholder {
-  color: #5d6bc4;
+  color: #b0b5e3;
 }
 
 .btnLogin {
   width: 256px;
   height: 49px;
   border-radius: 40px;
-  font-family: "montserrat";
+  font-family: "Montserrat-Medium";
   font-size: 18px;
   text-transform: uppercase;
   background-color: #605ff6;
@@ -124,6 +123,7 @@ input {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  margin-bottom: 10%;
 }
 
 .BtnSignUp {
