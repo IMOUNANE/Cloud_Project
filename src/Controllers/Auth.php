@@ -27,41 +27,26 @@ class Auth{
   }
 
   public function getBackoffice(){
-		if($_SESSION['id']){
-			$id_client=$_SESSION['id'];
-			$scripts_paths=$this->repo->get_paths($id_client);
-			$script_path = $scripts_paths[0]["script_path"] ?? null;
-			$client_script_1 = $scripts_paths[0]['client_script_1'] ?? null;
-			$client_script_2 = $scripts_paths[0]['client_script_2'] ?? null;
-			$client_script_3 = $scripts_paths[0]['client_script_3'] ?? null;
-			$client_script_4 = $scripts_paths[0]['client_script_4'] ?? null;
+			if(isset($_SESSION['id'])){
+				$id_client=$_SESSION['id'];
+				$scripts_paths=$this->repo->get_paths($id_client);
+				$script_path = $scripts_paths[0]["script_path"] ?? null;
+				$client_script_1 = $scripts_paths[0]['client_script_1'] ?? null;
+				$client_script_2 = $scripts_paths[0]['client_script_2'] ?? null;
+				$client_script_3 = $scripts_paths[0]['client_script_3'] ?? null;
+				$client_script_4 = $scripts_paths[0]['client_script_4'] ?? null;
 
-			require_once "Views/backoffice.php";
+				require_once "Views/backoffice.php";
 
-		}else{
-			require_once "Views/login.php";
-			die();
-		}
-  }
-
-	function matrice_to_array($tabl){
-		$new_tab = array();
-		foreach($tabl as $key=>$value){
-			if(is_array($value)){
-				//echo $key."IS AN ARRAY RECURSIVE CALLING";
-				$new_tab=array_merge($this->matrice_to_array($value),$new_tab);
 			}else{
-				$new_tab[]=$value;
+				require_once "Views/login.php";
+				die();
 			}
-		}
-		return array_unique($new_tab);
-	}
-
+  }
 
 	public function setRegister($datas){
 
 		$is_already_registered = $this->repo->isAlreadyUser();
-		//$all_mail= $this->matrice_to_array($is_already_registered);
 		
 		if(!in_array($datas['mail'], $is_already_registered) && filter_var($datas['mail'], FILTER_VALIDATE_EMAIL) && strlen($datas['password']) > 3 && $datas['company_name']){
 			$datas["ip_adress"]= $_SERVER['REMOTE_ADDR'];
@@ -73,7 +58,7 @@ class Auth{
 			$id_client = $this->repo->insert_user($datas);
 			$today = date("Y-m-d",strtotime("now"));
 			$this->repo->create_empty_row($id_client, $today);
-			$this->mail_provider();
+			$this->mail_provider($datas['mail']);
 			
 			require_once "Views/login.php";
 		}else{
@@ -96,21 +81,24 @@ class Auth{
 		}
 	}
 
-	public function mail_provider(){
+	public function mail_provider($email){
 		$email = new \SendGrid\Mail\Mail(); 
 		$email->setFrom("romain.feregotto@hetic.net", "RGPD - ADMIN");
-		$email->setSubject("Bienvenue chez RGPD - Control");
-		$email->addTo("hanna.achab@hetic.net", "User");
-		//$email->addContent("text/plain", "Vous êtes bien inscrit, rendez-vous sur votre espace Back-office :)");
+		$email->setSubject("Bienvenue chez My RGPD");
+		$email->addTo($email, "prospect");
 		$email->addContent(
-				"text/html", "<strong>Vous êtes bien inscrit, rendez-vous sur votre espace Back-office :)</strong>"
+				"text/html", '<strong>
+				Bonjour !
+				Nous avons le plaisir de vous confirmer votre inscription sur MY-RGPD et vous souhaitons la bienvenu.<br><br>
+				Vous pouvez dès à présent vous connecter à votre espace et beneficer de l’ensemble de nos services gratuitement pendant sept jours.
+				À bientôt 
+				
+				<a href="http://localhost/cloud_project/src/index.php?url=backoffice">COMMENCER</a>
+				</strong>'
 		);
 		$sendgrid = new \SendGrid(getenv('MAIL_KEY'));
 		try {
 				$response = $sendgrid->send($email);
-				print $response->statusCode() . "\n";
-				print_r($response->headers());
-				print $response->body() . "\n";
 		} catch (\Exception $e) {
 				echo 'Caught exception: '. $e->getMessage() ."\n";
 		}
@@ -137,7 +125,7 @@ class Auth{
 		}
 	}
 	
-	public function create_key(){ // Create Api_key
+	public function create_key(){
   
 		(new DotEnv('../.env'))->load();
 
@@ -246,7 +234,6 @@ class Auth{
 			$this->repo->update_key($id_client,	$api_key , $script_path, $client_script_1, $client_script_2, $client_script_3, $client_script_4, $today);
 			$this->getBackoffice();
 		}else{
-			//$current = file_get_contents(urlencode($file), true, null);
 			unlink($file);
 			$this->generate_script($id_client, $script_path, $client_script_1, $client_script_2 , $client_script_3, $client_script_4);
 		}

@@ -43,6 +43,10 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	{
 		$AuthController->Logout();
 	}
+	elseif($url == "backoffice")
+	{
+		$AuthController->getBackoffice();
+	}
 	elseif($url == "register")
 	{
 		$AuthController->getRegister();
@@ -51,7 +55,6 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	{
 		$AuthController->setRegister($_POST);
 	}
-
   elseif($url == "client_script")
 	{
 		$AuthController->generate($_POST);
