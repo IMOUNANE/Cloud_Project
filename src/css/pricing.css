@@ -1,0 +1,394 @@
+.heroPricing {
+  background-image: url("../assets/img/background-pricing-small.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+}
+
+.containerTitle {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  color: #eef1f8;
+ 
+}
+
+.heroTitle {
+  font-family: "Montserrat-Bold";
+  font-size: 16px;
+  margin-top: 20%;
+}
+
+@media (min-width: 500px) {
+  .heroTitle {
+    font-size: 28px;
+    margin-top: 10%;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10%;
+  align-items: center;
+}
+
+@media (min-width: 500px) {
+  .cards {
+    flex-direction: row;
+  }
+}
+
+.card {
+  width: 230px;
+  height: 313px;
+  background-color: #ffffff;
+  border: 1px solid rgba(93, 107, 196, 0.6);
+  box-sizing: border-box;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .card {
+    width: 270px;
+    height: 413px;
+  }
+}
+
+.contentCard {
+  margin-bottom: 17%;
+} 
+
+.titleCard {
+  font-family: "Montserrat-Medium";
+  color: #605FF6;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.priceCard {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+}
+
+@media (min-width: 500px) {
+  .priceCard {
+    font-size: 36px;
+  }
+}
+
+.infoCard {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 4%;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 500px) {
+  .infoCard {
+    font-size: 16px;
+  }
+}
+
+.cardSerenity {
+  margin: 6% 0% 6% 0;
+}
+
+@media (min-width: 500px) {
+  .cardSerenity{
+    margin: 0% 4% 0% 4%;
+  }
+}
+
+.containerBtnCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}
+
+.btnCard {
+  width: 120px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: #8887E2;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  font-variant: small-caps;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+@media (min-width: 500px) {
+  .btnCard {
+    width: 149px;
+    height: 39px;
+  }
+}
+
+.btnCard:hover {
+  background-color: #605ff6;
+} 
+
+.ContainerCustomPlan {
+  margin-top: 20%;
+  justify-content: center;
+  display: flex;
+}
+
+@media (min-width: 500px) {
+  .ContainerCustomPlan {
+    margin-top: 10%;
+  }
+}
+
+
+.contentCustomPlan {
+  display: flex;
+  flex-direction: column;
+}
+
+.iconCustomPlan {
+  margin-right: 5%;
+
+}
+
+.iconCustom {
+    width: 48px;
+}
+
+@media (min-width: 500px) {
+  .iconCustom {
+    width: 98px;
+  }
+}
+
+.titleCustomPLan {
+  margin-bottom: 3%;
+  font-family: "Montserrat-SemiBold";
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.08em;
+  color: #3d3d3d;
+}
+
+@media (min-width: 500px) {
+  .titleCustomPLan {
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+  }
+}
+
+.textCustomPLan {
+  margin-bottom: 2%;
+  font-family: "Montserrat-Medium";
+  font-size: 12px;
+  line-height: 23px;
+  letter-spacing: 0.01em;
+  color: #3d3d3d;
+}
+
+@media (min-width: 500px) {
+  .textCustomPLan {
+    font-size: 18px;
+    line-height: 33px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.MoreCustomPLan {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat-SemiBold";
+  font-size: 12px;
+  color: #605ff6;
+}
+
+@media (min-width: 500px) {
+  .MoreCustomPLan {
+    font-size: 16px;
+  }
+}
+
+.ContainerChangePricing {
+  margin-top: 20%;
+  justify-content: center;
+  display: flex;
+}
+
+@media (min-width: 500px) {
+  .ContainerChangePricing {
+    margin-top: 10%;
+  }
+}
+
+.contentChangePricing {
+  display: flex;
+  flex-direction: column;
+}
+
+.iconChangePricing {
+  margin-right: 5%;
+}
+
+.titleChangePricing {
+  margin-bottom: 3%;
+  font-family: "Montserrat-SemiBold";
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.08em;
+  color: #605ff6;
+}
+
+@media (min-width: 500px) {
+  .titleChangePricing {
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.textChangePricing {
+  font-family: "Montserrat-Medium";
+  font-size: 12px;
+  line-height: 23px;
+  letter-spacing: 0.01em;
+  color: #3d3d3d;
+}
+
+@media (min-width: 500px) {
+  .textChangePricing {
+    font-size: 18px;
+    line-height: 33px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.StartRgpd{
+  margin-top: 12%;
+}
+
+.contentStartRgpd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15%;
+}
+
+.contentTitleStartRgpd {
+  display: flex;
+  justify-content: center;
+}
+
+.titleStartRgpd {
+  margin-top: 8%;
+  margin-bottom: 3%;
+  font-family: "Montserrat-SemiBold";
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.08em;
+  color: #3D3D3D;
+}
+
+@media (min-width: 500px) {
+  .titleStartRgpd {
+    margin-top: 1%;
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.ContainerStartRgpd {
+  margin-bottom: 25%;
+}
+
+@media (min-width: 500px) {
+  .ContainerStartRgpd {
+    margin-bottom: 2%;
+  }
+}
+
+.btnStartRgpd {
+  display: flex;
+  justify-content: center;
+  width: 125px;
+  height: 28px;
+  background-color: #605ff6;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  display: inline-flex;
+  font-size: 10px;
+  font-family: "Montserrat-Medium";
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+  text-transform: uppercase;
+}
+
+.btnStartRgpd:hover {
+  /* background-color: #8887e2; */
+  border: 2px solid #605ff6;
+  background-color: white;
+  color: #605ff6;
+} 
+
+@media (min-width: 500px) {
+  .btnStartRgpd {
+    width: 165px;
+    height: 38px;
+    font-size: 14px;
+    border-radius: 50px;
+  }
+}
+
+.chevron {
+  margin-left: 8px;
+}
+
+.chevron:hover {
+background-color: #605ff6;
+color: #605ff6;
+}
+
+.moreContactStartRgpd {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat-SemiBold";
+  font-size: 10px;
+  letter-spacing: 0.01em;
+  color: #605FF6;
+  margin-left: 1.5%;
+}
+
+@media (min-width: 500px) {
+  .moreContactStartRgpd {
+    font-size: 16px;
+    line-height: 33px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.ContainerCustomPlan,
+.ContainerChangePricing {
+  opacity: 0;
+  transform: translateY(50px) scale(1);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.is-reached {
+  opacity: 1;
+  transform: none;
+}
+
