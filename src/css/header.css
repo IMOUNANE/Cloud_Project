@@ -201,6 +201,7 @@ a {
     align-items: center;
     cursor: pointer;
     transition: 0.4s;
+    outline: none;
   }
 
   .button:hover {

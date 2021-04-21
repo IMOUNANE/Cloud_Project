@@ -12,8 +12,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas:
-    "login signup";
+  grid-template-areas: "login signup";
 }
 
 .content {
@@ -32,18 +31,18 @@ body {
 
 .icon-close {
   width: 28px;
-  height:28px;
+  height: 28px;
   position: absolute;
   cursor: pointer;
   top: 28;
   right: 28;
-  cursor: pointer;    
-  transition:transform .9s;
+  cursor: pointer;
+  transition: transform 0.9s;
 }
 
 .icon-close:hover {
-  transform:rotate(-360deg);
-} 
+  transform: rotate(-360deg);
+}
 
 .content {
   display: flex;
@@ -92,7 +91,7 @@ body {
 input {
   color: #5d6bc4;
   padding-left: 17%;
-  outline-style: none
+  outline-style: none;
 }
 
 .inputSignUp::placeholder {
@@ -111,13 +110,14 @@ input {
   color: white;
   cursor: pointer;
   transition: 0.1s;
+  outline: none;
 }
 
 .btnLogin:hover {
   border: 2px solid #605ff6;
   background-color: white;
   color: #605ff6;
-} 
+}
 
 .btnRegister {
   border: 2px solid white;

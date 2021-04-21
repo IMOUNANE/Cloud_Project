@@ -10,7 +10,6 @@
   justify-content: center;
   text-transform: uppercase;
   color: #eef1f8;
- 
 }
 
 .heroTitle {
@@ -62,17 +61,17 @@
 
 .contentCard {
   margin-bottom: 17%;
-} 
+}
 
 .titleCard {
   font-family: "Montserrat-Medium";
-  color: #605FF6;
+  color: #605ff6;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .priceCard {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
 }
 
@@ -83,7 +82,7 @@
 }
 
 .infoCard {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 4%;
   font-size: 14px;
   letter-spacing: 0.04em;
@@ -100,7 +99,7 @@
 }
 
 @media (min-width: 500px) {
-  .cardSerenity{
+  .cardSerenity {
     margin: 0% 4% 0% 4%;
   }
 }
@@ -117,15 +116,16 @@
   display: flex;
   align-items: center;
   text-align: center;
-  background: #8887E2;
+  background: #8887e2;
   border: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #ffffff;
   font-size: 18px;
   font-variant: small-caps;
   justify-content: center;
   cursor: pointer;
   transition: 0.4s;
+  outline: none;
 }
 
 @media (min-width: 500px) {
@@ -137,7 +137,7 @@
 
 .btnCard:hover {
   background-color: #605ff6;
-} 
+}
 
 .ContainerCustomPlan {
   margin-top: 20%;
@@ -151,7 +151,6 @@
   }
 }
 
-
 .contentCustomPlan {
   display: flex;
   flex-direction: column;
@@ -159,11 +158,10 @@
 
 .iconCustomPlan {
   margin-right: 5%;
-
 }
 
 .iconCustom {
-    width: 48px;
+  width: 48px;
 }
 
 @media (min-width: 500px) {
@@ -274,7 +272,7 @@
   }
 }
 
-.StartRgpd{
+.StartRgpd {
   margin-top: 12%;
 }
 
@@ -297,7 +295,7 @@
   font-size: 14px;
   line-height: 26px;
   letter-spacing: 0.08em;
-  color: #3D3D3D;
+  color: #3d3d3d;
 }
 
 @media (min-width: 500px) {
@@ -342,7 +340,7 @@
   border: 2px solid #605ff6;
   background-color: white;
   color: #605ff6;
-} 
+}
 
 @media (min-width: 500px) {
   .btnStartRgpd {
@@ -358,8 +356,8 @@
 }
 
 .chevron:hover {
-background-color: #605ff6;
-color: #605ff6;
+  background-color: #605ff6;
+  color: #605ff6;
 }
 
 .moreContactStartRgpd {
@@ -368,7 +366,7 @@ color: #605ff6;
   font-family: "Montserrat-SemiBold";
   font-size: 10px;
   letter-spacing: 0.01em;
-  color: #605FF6;
+  color: #605ff6;
   margin-left: 1.5%;
 }
 
@@ -391,4 +389,3 @@ color: #605ff6;
   opacity: 1;
   transform: none;
 }
-
