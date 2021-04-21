@@ -8,7 +8,7 @@
         </div>
         <div class="signin">
             <div class="titleLogin">
-                <h1 class="contenttitleLogin">Connectez-vous À MYRGPD</h1>
+                <h1 class="contenttitleLogin">Connectez-vous à MY-RGPD</h1>
             </div>
             <div class="contentLogin">
                 <div>

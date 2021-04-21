@@ -77,7 +77,7 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-family: "Montserrat-semiBold";
+  font-family: "Montserrat";
   font-size: 28px;
   color: #605ff6;
 }
@@ -101,13 +101,13 @@ input {
 }
 
 .inputSignUp::placeholder {
-  color: #5d6bc4;
+  color: #b0b5e3;
 }
 
 .btnLogin {
   width: 256px;
   height: 49px;
-  font-family: "montserrat";
+  font-family: "Montserrat-Medium";
   font-size: 18px;
   text-transform: uppercase;
   background-color: #605ff6;
@@ -142,12 +142,12 @@ input {
 }
 
 .titleFirst {
-  font-family: "Montserrat-semiBold";
+  font-family: "Montserrat-Medium";
   margin-bottom: 3%;
 }
 
 .titleSecond {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   font-size: 18px;
 }
 
@@ -156,7 +156,7 @@ input {
 }
 
 .forgotPassword {
-  font-family: "Montserrat-semiBold";
+  font-family: "Montserrat-Medium";
   font-size: 14px;
   color: #5d6bc4;
   text-decoration: none;

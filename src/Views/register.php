@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/config/fonts.css" />
 <link rel="stylesheet" href="css/register.css" />
 
 <section class="container">
