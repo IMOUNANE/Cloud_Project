@@ -14,7 +14,8 @@ class ApiController{
     $key = $key_arr[1];
     $ip_adress_arr = explode('ip_adress=', $parts[2]);
     $ip_adress = $ip_adress_arr[1] ?? $ip_adress_arr[0];
-    
+    //var_dump($ip_adress);
+    //var_dump($key);
     if($key){
       $client_id_arr = $this->control_key($key); //Need to return Client ID
       $client_id = $client_id_arr['id'] ?? null;
