@@ -3,21 +3,23 @@
 }
 
 body {
-  background: linear-gradient(90deg,  #ffffff 50%, #605ff6 50%);
+  background: linear-gradient(90deg, #ffffff 50%, #605ff6 50%);
   background-repeat: no-repeat;
   height: auto;
 }
 
 .container {
   position: relative;
-  padding-top: 10%;
-  width: 100%;
-  height: 90vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas:
-    "signin signupBis";
+  grid-template-areas: "signin signupBis";
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
 
 .signin {
@@ -28,19 +30,19 @@ body {
   grid-area: signupBis;
 }
 
-.close {
+.Iconclose {
   width: 28px;
-  height:28px;
+  height: 28px;
   position: absolute;
   top: 28;
-  left: 28;   
-  cursor: pointer;    
-  transition:transform .9s;
+  left: 28;
+  cursor: pointer;
+  transition: transform 0.9s;
 }
 
 .close:hover {
-  transform:rotate(360deg);
-} 
+  transform: rotate(360deg);
+}
 
 .content {
   display: flex;
@@ -53,7 +55,7 @@ body {
   margin-bottom: 10%;
 }
 
-.contentLoginPurple{
+.contentLoginPurple {
   display: flex;
   justify-content: center;
   margin-bottom: 5%;
@@ -78,6 +80,10 @@ body {
   font-family: "Montserrat-semiBold";
   font-size: 28px;
   color: #605ff6;
+}
+
+.contenttitleLogin {
+  /* margin-top: 35%; */
 }
 
 .titleRegister {
@@ -120,7 +126,7 @@ input {
   border: 2px solid #605ff6;
   background-color: white;
   color: #605ff6;
-} 
+}
 
 .btnRegister {
   display: inline-block;
@@ -143,7 +149,7 @@ input {
 }
 
 .titleSecond {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
 }
 
@@ -152,8 +158,15 @@ input {
 }
 
 .forgotPassword {
-  font-family: "Montserrat-semiBold"; 
+  font-family: "Montserrat-semiBold";
   font-size: 14px;
-  color: #5D6BC4;
+  color: #5d6bc4;
   text-decoration: none;
 }
+
+.containerSignImg {
+  display: flex;
+  justify-content: center;
+}
+
+
