@@ -58,6 +58,7 @@ class Auth{
 			$id_client = $this->repo->insert_user($datas);
 			$today = date("Y-m-d",strtotime("now"));
 			$this->repo->create_empty_row($id_client, $today);
+			$this->mail_provider();
 			
 			require_once "Views/login.php";
 		}else{
@@ -73,6 +74,26 @@ class Auth{
 			else{
 				echo "<script>alert('Cette adresse e-mail existe déjà')</script>";
 			}
+		}
+	}
+
+	public function mail_provider(){
+		$email = new \SendGrid\Mail\Mail(); 
+		$email->setFrom("romain.feregotto@hetic.net", "RGPD - ADMIN");
+		$email->setSubject("Bienvenue chez RGPD - Control");
+		$email->addTo("hanna.achab@hetic.net", "User");
+		//$email->addContent("text/plain", "Vous êtes bien inscrit, rendez-vous sur votre espace Back-office :)");
+		$email->addContent(
+				"text/html", "<strong>Vous êtes bien inscrit, rendez-vous sur votre espace Back-office :)</strong>"
+		);
+		$sendgrid = new \SendGrid(getenv('MAIL_KEY'));
+		try {
+				$response = $sendgrid->send($email);
+				print $response->statusCode() . "\n";
+				print_r($response->headers());
+				print $response->body() . "\n";
+		} catch (\Exception $e) {
+				echo 'Caught exception: '. $e->getMessage() ."\n";
 		}
 	}
 
