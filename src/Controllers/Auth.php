@@ -97,7 +97,7 @@ class Auth{
 		}
 	}
 	
-	public function create_key($id_client){ // Create Api_key
+	public function create_key(){ // Create Api_key
   
 		(new DotEnv('../.env'))->load();
 
@@ -105,7 +105,7 @@ class Auth{
 		$salt = random_int(PHP_INT_MIN, PHP_INT_MAX);
 		$signature = hash_hmac('sha256', $salt, $secretKey, true);
 		$encodedSignature = base64_encode($signature);
-		$encodedSignature = str_ireplace("=", "z", $encodedSignature);
+		$encodedSignature = str_ireplace(["=", "/", "+", "&"], ["z", "5", "t", "k"], $encodedSignature);
 	
 		return $encodedSignature; 
   }
@@ -114,7 +114,7 @@ class Auth{
 		$company=$this->repo->get_company($post['client_id']);
 
 		$path ="http://localhost/Cloud_Project/src/js/user_script/";
-		$file = $path."pop-up-rgpd-".htmlspecialchars(trim(str_replace(" ","_", $company["entreprise"]))).'.js';
+		$file = $path."pop-up-rgpd-".trim(stripslashes(str_replace([" ", "&", "/", "'", "\"", ",", ".", ";"],["_", "_and_","sl", "ap", "qu", "v", "p", "pv"], htmlspecialchars($company["entreprise"])))).'.js';
 		$client_script_1 = $post['script_1'] ?? null;
 		$client_script_2 = $post['script_2'] ?? null;
 		$client_script_3 = $post['script_3'] ?? null;
@@ -128,8 +128,8 @@ class Auth{
 
 		$company=$this->repo->get_company($id_client);
 		$path="js/user_script/";
-		$file = $path."pop-up-rgpd-".htmlspecialchars(trim(str_replace(" ","_", $company["entreprise"]))).'.js';
-		$api_key = $this->create_key($id_client);
+		$file = $path."pop-up-rgpd-".trim(stripslashes(str_replace([" ", "&", "/", "'", "\"", ",", ".", ";"],["_", "_and_","sl", "ap", "qu", "v", "p", "pv"], htmlspecialchars($company["entreprise"])))).'.js';
+		$api_key = $this->create_key();
 		$today = date("Y-m-d",strtotime("now"));
 
 		if(!file_exists($file)){
