@@ -9,14 +9,17 @@ body {
 }
 
 .container {
-  padding-top: 10%;
-  width: 100%;
-  height: 90vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas:
     "login signup";
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
 
 .login {
@@ -129,4 +132,9 @@ input {
 
 .imgSignIn {
   width: 100%;
+}
+
+.containerSignImg {
+  display: flex;
+  justify-content: center;
 }

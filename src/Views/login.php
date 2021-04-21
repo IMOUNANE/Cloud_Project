@@ -1,18 +1,20 @@
+<link rel="stylesheet" href="css/config/fonts.css"/>
 <link rel="stylesheet" href="css/login.css"/>
 
 <section class="container">
     <article class="content">
-        <div ><a href="index.php"><img class="close" src="assets/icon/icon-close.svg" alt=""></a></div>
-         <div class="signin">
+        <div >
+            <a href="index.php"><img class="iconClose" src="assets/icon/icon-close.svg" alt=""></a>
+        </div>
+        <div class="signin">
             <div class="titleLogin">
-                <h1>Connectez-vous À MYRGPD</h1>
+                <h1 class="contenttitleLogin">Connectez-vous À MYRGPD</h1>
             </div>
             <div class="contentLogin">
                 <div>
                     <form action="?url=checkuser" method="POST">
                         <div class="contentInput">
                             <p>
-                            
                                 <label for="email"></label>
                                 <img class="iconLogin" src="assets/icon/icon-email.svg" alt="icon email">
                                 <input class="inputSignUp" name="email" type="text" placeholder="Email" required/>
@@ -43,23 +45,24 @@
         <div class="signupBis">
             <div class="titleLogin titleRegister contentLogin">
                 <div>           
-                <h1 class="titleFirst">Hello, Friends !</h1>
-                <h2 class="titleSecond">Entrez vos informations personnelles et commencez</h2>
+                    <h1 class="contenttitleLogin" class="titleFirst">Hello, Friends !</h1>
+                    <h2 class="titleSecond">Entrez vos informations personnelles et commencez</h2>
                 </div>
             </div>
             <div class="contentLogin">
                 <a href="index.php?url=register">
-                <button class="btnLogin btnRegister">S'inscrire</button>
-                </a>
-                
+                    <button class="btnLogin btnRegister">S'inscrire</button>
+                </a>    
             </div>
-            <div class="contentLogin">
-                <img
-                class="imgSignIn"
-                src="assets/img/imgViewSignIn.png"
-                alt="connection image"
+            <div class="containerSignImg">
+                <div class="contentSignImg">
+                 <img
+                    class="imgSignIn"
+                    src="assets/img/imgViewSignIn2.png"
+                    alt="connection image"
                 />
+                </div>
             </div>
-         </div>
+        </div>
     </article>
 </section>
