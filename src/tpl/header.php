@@ -19,17 +19,17 @@
       </div>
       <div class="nav-items">
         <a class="item" href="">RGBD c’est quoi</a> 
-        <a class="item" href="">Tarif</a>
+        <a class="item" href="index.php?url=pricing">Tarif</a>
         <a class="item" href="">Produit</a>
       </div>
     </nav>
     
     <div class="menu-logo element header-element">
-      <div>RGPD</div>
+    <a class="item" href="index.php">RGPD</a>
     </div>
 
     <div class="user element header-element">
-      <img class="user-icon" src="assets/icon/user-icon.svg" alt="">
-      <button class="button">Connexion <img class="chevron" src="assets/icon/chevron-white.svg" alt=""></button>
+      <a href="index.php?url=login"><img class="user-icon" src="assets/icon/user-icon.svg" alt=""></a>
+      <a href="index.php?url=login"><button class="button">Connexion <img class="chevron" src="assets/icon/chevron-white.svg" alt=""></button></a>
     </div>
   </div>

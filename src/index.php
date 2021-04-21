@@ -27,6 +27,10 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	{
 		$HomeController->home();
 	}
+	elseif($url == "pricing")
+	{
+		$HomeController->pricing();
+	}
 	elseif($url == "login")
 	{
 		$AuthController->getLogin();
