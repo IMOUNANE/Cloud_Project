@@ -8,13 +8,13 @@
 
 ## Si le dotenv ne vous ai pas fourni 
 
-`APP_ENV=dev<br/>
-DATABASE_DNS=mysql:host=localhost;dbname=rgpd;<br/>
-DATABASE_USER= *votre user*<br/>
-DATABASE_PASSWORD= *votre password*<br/>
-ROOT_DIRECTORY=http://localhost/Cloud_Project/src/<br/>
-MAIL_KEY= *Pour Générer votre key [https://sendgrid.com/]("Allez sur Sendgrid")*<br/>
-SECRET=*Votre secret sera le notre*`.<br/>
+APP_ENV=`dev`<br/>
+DATABASE_DNS=`mysql:host=localhost;dbname=rgpd;`<br/>
+DATABASE_USER= `*votre user*`<br/>
+DATABASE_PASSWORD= `*votre password*`<br/>
+ROOT_DIRECTORY=`http://localhost/Cloud_Project/src/`<br/>
+MAIL_KEY= `*Pour Générer votre key [https://sendgrid.com/]("Allez sur Sendgrid")*`<br/>
+SECRET=`*Votre secret sera le notre*.`<br/>
 
 ## Générer votre script 
 
