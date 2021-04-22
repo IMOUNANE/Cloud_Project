@@ -5,7 +5,6 @@
     <div class="sub-menu">
         <div class="company"><h1><?= $company['entreprise'] ?></h1></div>
         <ul class="menu">
-            
             <li>
                 <a href="#">
                     <div class="logo">
