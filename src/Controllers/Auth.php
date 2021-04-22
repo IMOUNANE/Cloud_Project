@@ -19,7 +19,7 @@ class Auth{
 
   public function Logout(){
 		session_unset();
-    require_once 'Views/index.php';
+    require_once 'Views/homepage.php';
   }
 
   public function getRegister(){
