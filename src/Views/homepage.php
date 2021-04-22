@@ -93,7 +93,7 @@ stocker, contrôler et gérer leurs données utilisateurs</p>
     <div>
       <h2 class="title">Ayez toujours une idée claire de ce que vous payez </h2>
       <p class="description">Une tarification par transaction intégréé sans aucun frais cachés.</p>
-      <a class="link" href="">Informations sur les tarifs <img src="assets/icon/chevron-purple.svg" alt=""></a>
+      <a class="link" href="index.php?url=pricing">Informations sur les tarifs <img src="assets/icon/chevron-purple.svg" alt=""></a>
     </div>
   </section>
 

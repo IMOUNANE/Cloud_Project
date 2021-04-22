@@ -83,6 +83,7 @@ body {
   width: 330px;
   height: 50px;
   background-color: #e7e6f7;
+  opacity: 60%;
   border: none;
   font-size: 18px;
 }
@@ -108,7 +109,7 @@ input {
   border: none;
   color: white;
   cursor: pointer;
-  transition: 0.1s;
+  transition: 0.2s;
   outline: none;
 }
 

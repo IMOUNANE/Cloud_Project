@@ -45,7 +45,7 @@
         <div class="signupBis">
             <div class="titleLogin titleRegister contentLogin">
                 <div>           
-                    <h1 class="contenttitleLogin" class="titleFirst">Hello, Friends !</h1>
+                    <h1 class="contenttitleLogin" class="titleFirst">Hello !</h1>
                     <h2 class="titleSecond">Entrez vos informations personnelles et commencez</h2>
                 </div>
             </div>

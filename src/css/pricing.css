@@ -1,3 +1,7 @@
+/* a {
+  text-decoration: underline;
+} */
+
 .heroPricing {
   background-image: url("../assets/img/background-pricing-small.png");
   background-repeat: no-repeat;
@@ -71,7 +75,7 @@
 }
 
 .priceCard {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   font-size: 24px;
 }
 
@@ -82,7 +86,7 @@
 }
 
 .infoCard {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   margin-bottom: 4%;
   font-size: 14px;
   letter-spacing: 0.04em;
@@ -118,7 +122,7 @@
   text-align: center;
   background: #8887e2;
   border: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   color: #ffffff;
   font-size: 18px;
   font-variant: small-caps;
@@ -172,7 +176,7 @@
 
 .titleCustomPLan {
   margin-bottom: 3%;
-  font-family: "Montserrat-SemiBold";
+  font-family: "Montserrat-Medium";
   font-size: 14px;
   line-height: 26px;
   letter-spacing: 0.08em;
@@ -182,14 +186,14 @@
 @media (min-width: 500px) {
   .titleCustomPLan {
     font-size: 22px;
-    line-height: 36px;
+    line-height: 32px;
     letter-spacing: 0.02em;
   }
 }
 
 .textCustomPLan {
-  margin-bottom: 2%;
-  font-family: "Montserrat-Medium";
+  margin-bottom: 4%;
+  font-family: "Montserrat";
   font-size: 12px;
   line-height: 23px;
   letter-spacing: 0.01em;
@@ -199,7 +203,7 @@
 @media (min-width: 500px) {
   .textCustomPLan {
     font-size: 18px;
-    line-height: 33px;
+    line-height: 27px;
     letter-spacing: 0.08em;
   }
 }
@@ -207,9 +211,10 @@
 .MoreCustomPLan {
   display: flex;
   align-items: center;
-  font-family: "Montserrat-SemiBold";
+  font-family: "Montserrat-Medium";
   font-size: 12px;
   color: #605ff6;
+  text-decoration: underline;
 }
 
 @media (min-width: 500px) {
@@ -240,8 +245,8 @@
 }
 
 .titleChangePricing {
-  margin-bottom: 3%;
-  font-family: "Montserrat-SemiBold";
+  margin-bottom: 1%;
+  font-family: "Montserrat-Medium";
   font-size: 14px;
   line-height: 26px;
   letter-spacing: 0.08em;
@@ -257,7 +262,7 @@
 }
 
 .textChangePricing {
-  font-family: "Montserrat-Medium";
+  font-family: "Montserrat";
   font-size: 12px;
   line-height: 23px;
   letter-spacing: 0.01em;
@@ -291,7 +296,7 @@
 .titleStartRgpd {
   margin-top: 8%;
   margin-bottom: 3%;
-  font-family: "Montserrat-SemiBold";
+  font-family: "Montserrat-Medium";
   font-size: 14px;
   line-height: 26px;
   letter-spacing: 0.08em;
@@ -336,10 +341,7 @@
 }
 
 .btnStartRgpd:hover {
-  /* background-color: #8887e2; */
-  border: 2px solid #605ff6;
-  background-color: white;
-  color: #605ff6;
+  background-color: #8887e2;
 }
 
 @media (min-width: 500px) {
@@ -361,19 +363,19 @@
 }
 
 .moreContactStartRgpd {
+  text-decoration: underline;
   display: flex;
   align-items: center;
-  font-family: "Montserrat-SemiBold";
+  font-family: "Montserrat-Medium";
   font-size: 10px;
   letter-spacing: 0.01em;
   color: #605ff6;
-  margin-left: 1.5%;
+  margin-left: 4%;
 }
 
 @media (min-width: 500px) {
   .moreContactStartRgpd {
     font-size: 16px;
-    line-height: 33px;
     letter-spacing: 0.08em;
   }
 }
