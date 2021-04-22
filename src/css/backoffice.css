@@ -133,12 +133,19 @@ form .form-bottom {
   justify-content: space-evenly;
   align-items: center;
 }
-.menu li {
+.menu li a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 200px;
+}
+li a div p {
+  color: black;
+  cursor: pointer;
+}
+li a div p:hover {
+  color: #605ff6;
 }
 .registre {
   display: flex;
