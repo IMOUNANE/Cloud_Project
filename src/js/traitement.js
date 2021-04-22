@@ -49,7 +49,7 @@ function set_choices(){
 
 function send_ajax(data){
   var request = new XMLHttpRequest();
-      request.open('POST', 'http://localhost/cloud_project/src/?url=post_ajax', true);
+      request.open('POST', 'http://gravity-zero.fr/?url=post_ajax', true);
       request.setRequestHeader("Content-Type", "application/json");
       request.onreadystatechange = function () {
           if (request.readyState === 4) {
@@ -57,7 +57,6 @@ function send_ajax(data){
                   let res = JSON.parse(request.response);
                   console.log(res);
                   if (res) {
-                    console.log('toto');
                       //On ferme la fenêtre quand on à la réponse de l'ajax.
                       //Pas besoin de chercher à rappeler get_infos(), au prochain chargement on aura l'info
                       window.close(); 
