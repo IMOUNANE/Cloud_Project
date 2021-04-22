@@ -174,7 +174,7 @@ class Auth{
 				}
 		
 			function get_infos(ip_adress){
-				fetch("'.getenv('ROOT_DIRECTORY').'?url=apiV1/apikey='.$api_key.'/ip_adress="+ip_adress)
+				fetch("https://cors-anywhere.herokuapp.com/corsdemo'.getenv('ROOT_DIRECTORY').'?url=apiV1/apikey='.$api_key.'/ip_adress="+ip_adress)
 					.then((response) => response.json())
 					.then((data) => {
 						console.log(data);
