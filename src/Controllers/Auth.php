@@ -45,11 +45,25 @@ class Auth{
 			}
   }
 
+	public function matrice_to_array($tab){
+		$new_tab = array();
+		foreach($tab as $key=>$value){
+			if(is_array($value)){
+				$new_tab=array_merge($this->matrice_to_array($value),$new_tab);
+			}else{
+				$new_tab[]=$value;
+			}
+		}
+		return array_unique($new_tab);
+	}
+
 	public function setRegister($datas){
 
 		$is_already_registered = $this->repo->isAlreadyUser();
+
+		$is_registered = $this->matrice_to_array($is_already_registered);
 		
-		if(!in_array($datas['mail'], $is_already_registered) && filter_var($datas['mail'], FILTER_VALIDATE_EMAIL) && strlen($datas['password']) > 3 && $datas['company_name']){
+		if(!in_array($datas['mail'], $is_registered) && filter_var($datas['mail'], FILTER_VALIDATE_EMAIL) && strlen($datas['password']) > 3 && $datas['company_name']){
 			$datas["ip_adress"]= $_SERVER['REMOTE_ADDR'];
 			$datas["creation_date"] = date("Y-m-d H:i:s", strtotime("now"));
 			$datas["is_active"] = 1;
@@ -218,7 +232,7 @@ class Auth{
 			}
 			get_ip();
 			function get_form(datas){
-				var strWindowFeatures = "width=500,height=600,directories=no,titlebar=no,toolbar=no,menubar=no,location=no,status=no,resizable=no,scrollbars=yes";
+				var strWindowFeatures = "width=1000,height=800,directories=no,titlebar=no,toolbar=no,menubar=no,location=no,status=no,resizable=no,scrollbars=yes";
 				popup = window.open("'.getenv('ROOT_DIRECTORY').'?url=apiV1/get_form/"+"id="+datas.client_id+"/ip_adress="+datas.unknown, "_blank", strWindowFeatures);
 			}
 			function create_button(datas){
