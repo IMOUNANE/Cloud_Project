@@ -49,7 +49,7 @@ function set_choices(){
 
 function send_ajax(data){
   var request = new XMLHttpRequest();
-      request.open('POST', 'http://gravity-zero.fr/?url=post_ajax', true);
+      request.open('POST', 'https://gravity-zero.fr/?url=post_ajax', true);
       request.setRequestHeader("Content-Type", "application/json");
       request.onreadystatechange = function () {
           if (request.readyState === 4) {
