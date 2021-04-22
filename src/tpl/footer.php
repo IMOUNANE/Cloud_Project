@@ -16,7 +16,7 @@
             <a href="" class="heading">Politique de confidentialité</a>     
           </ul>
 
-           <div class="icon-container">
+          <div class="icon-container">
             <img class="icon-footer" src="assets/icon/linkedin-icon.svg" alt="">
             <img class="icon-footer" src="assets/icon/twitter-icon.svg" alt="">
             <img class="icon-footer" src="assets/icon/facebook-icon.svg" alt="">

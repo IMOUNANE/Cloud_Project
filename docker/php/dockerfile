@@ -1,8 +1,0 @@
-FROM php:8.0.3-cli
-
-RUN apt-get update && apt-get install -y
-
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
-CMD [ "composer", "install" ]
-CMD [ "php", "../../src/index.php" ]
