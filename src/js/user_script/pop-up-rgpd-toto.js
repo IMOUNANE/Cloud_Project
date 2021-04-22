@@ -1,6 +1,6 @@
 
 			function get_ip(){
-				fetch("https://api.my-ip.io/ip.json")
+				fetch("http://api.my-ip.io/ip.json")
 				.then((response) => response.json())
 					.then((data) => {
 						var ip_adress = data["ip"];
@@ -9,7 +9,7 @@
 				}
 		
 			function get_infos(ip_adress){
-				fetch("http://localhost/cloud_project/src/?url=apiV1/apikey=fjk5JewwVb6dK7XJPef3valJH32MvloARnSmhxD9B5Iz/ip_adress="+ip_adress)
+				fetch("http://localhost/Cloud_Project/src/?url=apiV1/apikey=bGjykxBL169C8Ko5r5ZZBAyicSnF1lgOXTu7RPZETKUz/ip_adress="+ip_adress)
 					.then((response) => response.json())
 					.then((data) => {
 						console.log(data);
@@ -38,7 +38,7 @@
 
 								body = document.querySelector("body")
 								script = document.createElement("script")
-								script.setAttribute("src", "https://www.cssscript.com/customizable-popup-boxes-vanilla-javascript-poppypopup/")
+								script.setAttribute("src", "")
 								body.appendChild(script)
 							}
 							if(parseInt(choices.user_choice_4, 10) === 1){
@@ -54,7 +54,7 @@
 			get_ip();
 			function get_form(datas){
 				var strWindowFeatures = "width=500,height=600,directories=no,titlebar=no,toolbar=no,menubar=no,location=no,status=no,resizable=no,scrollbars=yes";
-				popup = window.open("http://localhost/cloud_project/src/?url=apiV1/get_form/"+"id="+datas.client_id+"/ip_adress="+datas.unknown, "_blank", strWindowFeatures);
+				popup = window.open("http://localhost/Cloud_Project/src/?url=apiV1/get_form/"+"id="+datas.client_id+"/ip_adress="+datas.unknown, "_blank", strWindowFeatures);
 			}
 			function create_button(datas){
 				var button = document.createElement("button");

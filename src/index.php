@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', '1');
 require_once '../vendor/autoload.php';
 
 use CloudProject\Controllers\{DotEnv,Auth,HomeController, ApiController};
@@ -73,6 +74,10 @@ use CloudProject\Models\{Auth_repo,Database, Api_repo};
 	elseif($url == "post_ajax")
 	{
 		$ApiController->setChoices();//Page de traitement de la pop-up client
+	}
+	elseif($url == "site-client")
+	{
+		require_once "Views/call_pop-up.php";
 	}
 	else
 	{

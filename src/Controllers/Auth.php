@@ -14,12 +14,12 @@ class Auth{
   }
 
   public function getLogin(){
-      require_once "Views/Login.php";
+      require_once "Views/login.php";
   }
 
   public function Logout(){
 		session_unset();
-    header('Location:?url=index');
+    require_once 'Views/index.php';
   }
 
   public function getRegister(){
@@ -94,7 +94,7 @@ class Auth{
 				Vous pouvez dès à présent vous connecter à votre espace<br> et beneficer de l’ensemble de nos services gratuitement pendant sept jours.<br><br>
 				À bientôt <br><br>
 				
-				<a href="http://localhost/cloud_project/src/index.php?url=backoffice">COMMENCER</a>
+				<a href="'.getenv('ROOT_DIRECTORY').'index.php?url=backoffice">COMMENCER</a>
 				</strong>'
 		);
 		$sendgrid = new \SendGrid(getenv('MAIL_KEY'));
@@ -128,7 +128,7 @@ class Auth{
 	
 	public function create_key(){
   
-		(new DotEnv('../.env'))->load();
+		//(new DotEnv('../../.env'))->load();
 
 		$secretKey = getenv('SECRET');
 		$salt = random_int(PHP_INT_MIN, PHP_INT_MAX);
@@ -142,7 +142,7 @@ class Auth{
 	public function generate($post){
 		$company=$this->repo->get_company($post['client_id']);
 
-		$path ="http://localhost/Cloud_Project/src/js/user_script/";
+		$path = getenv('ROOT_DIRECTORY')."/js/user_script/";
 		$file = $path."pop-up-rgpd-".trim(stripslashes(str_replace([" ", "&", "/", "'", "\"", ",", ".", ";"],["_", "_and_","sl", "ap", "qu", "v", "p", "pv"], htmlspecialchars($company["entreprise"])))).'.js';
 		$client_script_1 = $post['script_1'] ?? null;
 		$client_script_2 = $post['script_2'] ?? null;
@@ -174,7 +174,7 @@ class Auth{
 				}
 		
 			function get_infos(ip_adress){
-				fetch("http://localhost/cloud_project/src/?url=apiV1/apikey='.$api_key.'/ip_adress="+ip_adress)
+				fetch("'.getenv('ROOT_DIRECTORY').'?url=apiV1/apikey='.$api_key.'/ip_adress="+ip_adress)
 					.then((response) => response.json())
 					.then((data) => {
 						console.log(data);
@@ -219,7 +219,7 @@ class Auth{
 			get_ip();
 			function get_form(datas){
 				var strWindowFeatures = "width=500,height=600,directories=no,titlebar=no,toolbar=no,menubar=no,location=no,status=no,resizable=no,scrollbars=yes";
-				popup = window.open("http://localhost/cloud_project/src/?url=apiV1/get_form/"+"id="+datas.client_id+"/ip_adress="+datas.unknown, "_blank", strWindowFeatures);
+				popup = window.open("'.getenv('ROOT_DIRECTORY').'?url=apiV1/get_form/"+"id="+datas.client_id+"/ip_adress="+datas.unknown, "_blank", strWindowFeatures);
 			}
 			function create_button(datas){
 				var button = document.createElement("button");

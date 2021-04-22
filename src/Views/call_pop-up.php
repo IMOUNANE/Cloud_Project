@@ -1,4 +1,4 @@
-<script src="http://localhost/Cloud_Project/src/js/user_script/pop-up-rgpd-Hanna_world.js "></script>
+<script src="<?= getenv('ROOT_DIRECTORY')?>js/user_script/pop-up-rgpd-toto.js"></script>
 
 
 
