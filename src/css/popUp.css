@@ -1,10 +1,10 @@
 .popUp {
-  padding: 80px;
-  margin-bottom: 60px;
+  padding: 80px 80px 20px 80px;
   font-size: 14px;
   font-family: "Montserrat";
   line-height: 21px;
   color: #3d3d3d;
+  text-align: justify;
 }
 
 .title-popUp {
@@ -22,6 +22,7 @@
 
 .title {
   text-transform: uppercase;
+  font-family: "Montserrat-Medium";
   color: #605ff6;
 }
 
@@ -116,7 +117,6 @@ input:checked + .slider:before {
   cursor: pointer;
   transition: 0.4s;
   outline: none;
-  margin-top: 30px;
 }
 
 .button:hover {
@@ -125,10 +125,16 @@ input:checked + .slider:before {
 
 .button-container {
   width: 100%;
+  margin-top: 90px;
   display: inline-flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
-.refuse {
+.link {
+  font-size: 18px;
+}
+
+.margin {
   margin-right: 16%;
 }
