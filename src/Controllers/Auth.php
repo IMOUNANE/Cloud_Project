@@ -205,6 +205,7 @@ class Auth{
 								script = document.createElement("script")
 								script.setAttribute("src", "'.$client_script_1.'")
 								body.appendChild(script)
+								console.log('.$client_script_1.' successfuly loaded);
 							}
 							if(parseInt(choices.user_choice_2, 10) === 1){
 
@@ -212,6 +213,7 @@ class Auth{
 								script = document.createElement("script")
 								script.setAttribute("src", "'.$client_script_2.'")
 								body.appendChild(script)
+								console.log('.$client_script_2.' successfuly loaded);
 							}
 							if(parseInt(choices.user_choice_3, 10) === 1){
 
@@ -219,6 +221,7 @@ class Auth{
 								script = document.createElement("script")
 								script.setAttribute("src", "'.$client_script_3.'")
 								body.appendChild(script)
+								console.log('.$client_script_3.' successfuly loaded);
 							}
 							if(parseInt(choices.user_choice_4, 10) === 1){
 
@@ -226,6 +229,7 @@ class Auth{
 								script = document.createElement("script")
 								script.setAttribute("src", "'.$client_script_4.'")
 								body.appendChild(script)
+								console.log('.$client_script_4.' successfuly loaded);
 							}
 						}
 				});
