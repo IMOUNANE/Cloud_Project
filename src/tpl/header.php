@@ -17,14 +17,16 @@
           <div class="nav-openIcon"></div>
       </div>
       <div class="nav-items">
-        <a class="item" href="">RGBD c’est quoi</a> 
+        <a class="item" href="">SERENITY c’est quoi ?</a> 
         <a class="item" href="index.php?url=pricing">Tarif</a>
         <a class="item" href="">Produit</a>
       </div>
     </nav>
-    
+
     <div class="menu-logo element header-element">
-    <a class="item" href="index.php">RGPD</a>
+      <a class="item" href="index.php">
+        <img src="assets/img/serenity.png" alt="">
+      </a>   
     </div>
 
     <div class="user element header-element">

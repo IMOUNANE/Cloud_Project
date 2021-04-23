@@ -8,18 +8,21 @@
             <img class="logo-footer" src="assets/img/logoRgpd.png" alt="">
           </div>
 
-          <ul class="headings-container container">
+          <div class="headings-container container">
             <a href="" class="heading">CGU</a>
             <a href="" class="heading">Nous rejoindre</a>
             <a href="" class="heading">Nous contacter</a>
             <a href="" class="heading">Mentions légales</a>
             <a href="" class="heading">Politique de confidentialité</a>     
-          </ul>
+          </div>
 
-          <div class="icon-container">
-            <img class="icon-footer" src="assets/icon/linkedin-icon.svg" alt="">
-            <img class="icon-footer" src="assets/icon/twitter-icon.svg" alt="">
-            <img class="icon-footer" src="assets/icon/facebook-icon.svg" alt="">
+          <div class="info-container">
+            <p class="info-footer">SERENITY permet aux professionnels de tous secteurs d’identifier, valoriser, sécuriser et diffuser leurs données complexes, en temps réel. L’utilisation de la solution My-RGPD concerne toutes les entreprises susceptibles de traiter des données à caractère personnel. </p>
+            <div class="icon-container">
+              <img class="icon-footer icon" src="assets/icon/linkedin-icon.svg" alt="">
+              <img class="icon-footer icon" src="assets/icon/twitter-icon.svg" alt="">
+              <img class="icon-footer" src="assets/icon/facebook-icon.svg" alt="">
+            </div>
           </div>
       </div>
 

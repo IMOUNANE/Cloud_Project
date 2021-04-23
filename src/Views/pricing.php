@@ -7,12 +7,12 @@
   </section>
   <section class="cards">
     <article class="cardClassic card">
-      <h4 class="contentCard titleCard ">Classic</h4>
-      <h2 class="contentCard priceCard">€29</h2>
+      <h4 class="contentCard titleCard ">Gratuit</h4>
+      <h2 class="contentCard priceCard">€0</h2>
       <div class="infoCards">
         <p class="infoCard">Par domaine</p>
-        <p class="infoCard">Par mois</p>
-        <p class="infoCard">Essaie gratuit</p>
+        <p class="infoCard">14 jours</p>
+        <p class="infoCard">Service limité</p>
       </div>
       <div class="containerBtnCard">
         <button class="btnCard">c'est parti</button>
@@ -20,12 +20,12 @@
     </article>
 
     <article class="cardSerenity card">
-      <h4 class="contentCard titleCard ">Serenity</h4>
-      <h2 class="contentCard priceCard">€69</h2>
+      <h4 class="contentCard titleCard ">Business</h4>
+      <h2 class="contentCard priceCard">€59</h2>
       <div class="infoCards">
         <p class="infoCard">Par domaine</p>
         <p class="infoCard">Par mois</p>
-        <p  class="infoCard">Essaie gratuit</p>
+        <p  class="infoCard">Import illimité</p>
       </div>
       <div class="containerBtnCard">
         <button class="btnCard">c'est parti</button>
@@ -33,12 +33,12 @@
     </article>
 
     <article class="cardZen card">
-      <h4 class="contentCard titleCard">Zen</h4>
+      <h4 class="contentCard titleCard">Premium</h4>
       <h2 class="contentCard priceCard">€129</h2>
       <div class="infoCards">
         <p class="infoCard">Par domaine</p>
         <p class="infoCard">Par mois</p>
-        <p class="infoCard">Essaie gratuit</p>
+        <p class="infoCard">Import illimité</p>
       </div>
       <div class="containerBtnCard">
         <button class="btnCard">c'est parti</button>

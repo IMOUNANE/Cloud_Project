@@ -133,7 +133,7 @@ a {
 @media (min-width: 800px) {
   .nav.is-open .header-container,
   .header-container {
-    height: 60px;
+    height: 90px;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas: "logo navItems icon";
@@ -194,10 +194,10 @@ a {
     background-color: #8887e2;
     border-radius: 50px;
     border: none;
-    padding: 10px 18px;
+    padding: 8px 18px;
     color: white;
     display: inline-flex;
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Montserrat-Medium";
     align-items: center;
     cursor: pointer;

@@ -48,6 +48,12 @@ a {
   padding-top: 60px;
 }
 
+.info-footer {
+  text-align: center;
+  padding: 30px 80px;
+  color: #605ff6;
+}
+
 .logo-footer {
   height: 180px;
 }
@@ -56,7 +62,7 @@ a {
   height: 44px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1130px) {
   .footer-container {
     display: flex;
     justify-content: space-between;
@@ -73,11 +79,32 @@ a {
     align-self: flex-end;
   }
 
+  .heading:not(:last-child) {
+    margin-bottom: 42px;
+  }
+
   .logo-footer {
-    height: auto;
+    height: 268px;
   }
 
   .icon-container {
     align-self: flex-end;
+  }
+
+  .info-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info-footer {
+    text-align: initial;
+    padding: 0;
+    line-height: 18px;
+  }
+
+  .icon {
+    margin-right: 6%;
   }
 }

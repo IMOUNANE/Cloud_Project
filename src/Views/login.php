@@ -8,7 +8,7 @@
         </div>
         <div class="signin">
             <div class="titleLogin">
-                <h1 class="contenttitleLogin">Connectez-vous à MY-RGPD</h1>
+                <h1 class="contenttitleLogin">Connectez-vous à SERENITY</h1>
             </div>
             <div class="contentLogin">
                 <div>
@@ -45,7 +45,7 @@
         <div class="signupBis">
             <div class="titleLogin titleRegister contentLogin">
                 <div>           
-                    <h1 class="contenttitleLogin" class="titleFirst">Hello, Friends !</h1>
+                    <h1 class="contenttitleLogin" class="titleFirst">Hello !</h1>
                     <h2 class="titleSecond">Entrez vos informations personnelles et commencez</h2>
                 </div>
             </div>
